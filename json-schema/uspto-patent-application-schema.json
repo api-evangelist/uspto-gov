@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uspto-gov/main/json-schema/uspto-patent-application-schema.json",
+  "title": "USPTO Patent Application",
+  "description": "A U.S. patent application as returned by the USPTO Open Data Portal Patent File Wrapper API.",
+  "type": "object",
+  "required": ["applicationNumberText"],
+  "properties": {
+    "applicationNumberText": {"type": "string", "description": "USPTO application number (e.g. 16/123,456)."},
+    "patentNumber": {"type": "string", "description": "Granted patent number, if any."},
+    "filingDate": {"type": "string", "format": "date"},
+    "grantDate": {"type": "string", "format": "date"},
+    "publicationDate": {"type": "string", "format": "date"},
+    "publicationNumber": {"type": "string"},
+    "applicationTypeCategory": {"type": "string", "enum": ["UTILITY", "DESIGN", "PLANT", "REISSUE", "PROVISIONAL", "SIR"]},
+    "applicationStatusCode": {"type": "string"},
+    "applicationStatusDescriptionText": {"type": "string"},
+    "applicationStatusDate": {"type": "string", "format": "date"},
+    "inventionTitle": {"type": "string"},
+    "firstInventorToFileIndicator": {"type": "string", "enum": ["Y", "N"]},
+    "examinerNameText": {"type": "string"},
+    "groupArtUnitNumber": {"type": "string"},
+    "classSubclass": {"type": "string"},
+    "cpcClassificationBag": {"type": "array", "items": {"type": "string"}},
+    "applicantBag": {"type": "array", "items": {"$ref": "#/$defs/Party"}},
+    "inventorBag": {"type": "array", "items": {"$ref": "#/$defs/Party"}},
+    "assignmentBag": {"type": "array", "items": {"$ref": "#/$defs/Assignment"}}
+  },
+  "$defs": {
+    "Party": {
+      "type": "object",
+      "properties": {
+        "firstName": {"type": "string"},
+        "lastName": {"type": "string"},
+        "nameLineOneText": {"type": "string"},
+        "country": {"type": "string"},
+        "cityName": {"type": "string"},
+        "geographicRegionName": {"type": "string"}
+      }
+    },
+    "Assignment": {
+      "type": "object",
+      "properties": {
+        "reelNumber": {"type": "string"},
+        "frameNumber": {"type": "string"},
+        "recordedDate": {"type": "string", "format": "date"},
+        "executionDate": {"type": "string", "format": "date"},
+        "conveyanceText": {"type": "string"},
+        "assignorBag": {"type": "array", "items": {"$ref": "#/$defs/Party"}},
+        "assigneeBag": {"type": "array", "items": {"$ref": "#/$defs/Party"}}
+      }
+    }
+  }
+}

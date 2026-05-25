@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) API
+  version: '1.0'
+  description: |
+    USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+  contact: {name: USPTO API Help, email: APIhelp@uspto.gov}
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+paths:
+  /api/v1/datasets/products/search:
+    get:
+      summary: Search Bulk Products
+      operationId: searchBulkProducts
+      parameters:
+      - {name: q, in: query, schema: {type: string}, description: Free-text query}
+      - {name: productIdentifier, in: query, schema: {type: string}}
+      - {name: categoryCode, in: query, schema: {type: string, enum: [PATENT, TRADEMARK, OACT]}}
+      - {name: fromDate, in: query, schema: {type: string, format: date}}
+      - {name: toDate, in: query, schema: {type: string, format: date}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Product search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/BulkProductSearchResponse'}
+  /api/v1/datasets/products/{productIdentifier}:
+    get:
+      summary: Get Bulk Product
+      operationId: getBulkProduct
+      parameters:
+      - {name: productIdentifier, in: path, required: true, schema: {type: string}}
+      - {name: fromDate, in: query, schema: {type: string, format: date}}
+      - {name: toDate, in: query, schema: {type: string, format: date}}
+      responses:
+        '200':
+          description: Product metadata with file list
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/BulkProduct'}
+  /api/v1/datasets/products/{productIdentifier}/files/{fileName}:
+    get:
+      summary: Download Bulk Product File
+      operationId: downloadBulkProductFile
+      parameters:
+      - {name: productIdentifier, in: path, required: true, schema: {type: string}}
+      - {name: fileName, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: File binary
+          content:
+            application/octet-stream:
+              schema: {type: string, format: binary}
+components:
+  securitySchemes:
+    ApiKeyAuth: {type: apiKey, in: header, name: X-API-KEY}
+  schemas:
+    BulkProduct:
+      type: object
+      properties:
+        productIdentifier: {type: string}
+        productTitleText: {type: string}
+        productDescriptionText: {type: string}
+        productFrequencyText: {type: string}
+        productFromDate: {type: string, format: date}
+        productToDate: {type: string, format: date}
+        mimeTypeIdentifierBag: {type: array, items: {type: string}}
+        productFileBag:
+          type: array
+          items:
+            type: object
+            properties:
+              fileName: {type: string}
+              fileSize: {type: integer}
+              fileDate: {type: string, format: date}
+              fileDownloadURI: {type: string, format: uri}
+    BulkProductSearchResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        bulkDataProductBag:
+          type: array
+          items: {$ref: '#/components/schemas/BulkProduct'}

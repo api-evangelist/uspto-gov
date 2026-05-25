@@ -1,0 +1,102 @@
+aid: uspto-gov
+name: USPTO Vocabulary
+specVersion: '0.1'
+description: |
+  Domain vocabulary for U.S. patent and trademark APIs published by the United States Patent and
+  Trademark Office. Aligns USPTO field names and codes with schema.org and DCAT where applicable.
+
+concepts:
+- term: Patent Application
+  uri: https://www.uspto.gov/ns/PatentApplication
+  definition: A request submitted to the USPTO for the grant of a patent on an invention.
+- term: Patent
+  uri: https://www.uspto.gov/ns/Patent
+  definition: A property right granted by the USPTO that excludes others from making, using, or selling
+    an invention for a limited term.
+- term: Trademark
+  uri: https://www.uspto.gov/ns/Trademark
+  definition: A word, phrase, symbol, or design that identifies and distinguishes the source of goods
+    or services.
+- term: PTAB
+  uri: https://www.uspto.gov/ns/Ptab
+  definition: Patent Trial and Appeal Board — an adjudicative body within the USPTO that conducts
+    AIA trials (IPR, PGR, CBM) and ex parte appeals.
+- term: TSDR
+  uri: https://www.uspto.gov/ns/Tsdr
+  definition: Trademark Status & Document Retrieval system providing trademark case status and file
+    wrapper documents.
+- term: File Wrapper
+  uri: https://www.uspto.gov/ns/FileWrapper
+  definition: The complete record of a patent or trademark application's prosecution history.
+- term: Office Action
+  uri: https://www.uspto.gov/ns/OfficeAction
+  definition: A written communication from a USPTO examiner regarding an application, often containing
+    rejections, objections, or requirements.
+- term: Enriched Citation
+  uri: https://www.uspto.gov/ns/EnrichedCitation
+  definition: A citation extracted from an office action and normalized against the application's
+    reference list using machine-learning entity resolution.
+- term: Assignment
+  uri: https://www.uspto.gov/ns/Assignment
+  definition: A transfer of ownership rights in a patent or trademark.
+- term: Continuity
+  uri: https://www.uspto.gov/ns/Continuity
+  definition: Parent-child relationships between patent applications (continuations, divisionals,
+    continuations-in-part, reissues).
+- term: CPC
+  uri: https://www.cooperativepatentclassification.org/
+  definition: Cooperative Patent Classification — a hierarchical classification system jointly
+    maintained by the USPTO and EPO.
+- term: IPR
+  definition: Inter Partes Review — an AIA post-grant proceeding before PTAB.
+- term: PGR
+  definition: Post-Grant Review — an AIA post-grant proceeding before PTAB.
+- term: CBM
+  definition: Covered Business Method review — a (now sunset) AIA trial type.
+- term: Section 101
+  definition: Patent rejection ground — subject-matter eligibility under 35 U.S.C. 101.
+- term: Section 102
+  definition: Patent rejection ground — novelty under 35 U.S.C. 102.
+- term: Section 103
+  definition: Patent rejection ground — obviousness under 35 U.S.C. 103.
+- term: Section 112
+  definition: Patent rejection ground — specification / enablement / written description under
+    35 U.S.C. 112.
+- term: Madrid Protocol
+  definition: International trademark filing system; tracked in TSDR via International Registration
+    Number.
+- term: International Class
+  definition: Nice Classification (NCL) class for trademark goods and services.
+
+services:
+- name: Open Data Portal (ODP)
+  uri: https://data.uspto.gov/
+  description: Unified USPTO data platform hosting Patent File Wrapper, PTAB, Office Action, Bulk
+    Data, and (from March 2026) PatentsView APIs.
+- name: TSDR
+  uri: https://tsdr.uspto.gov/
+  description: Trademark Status & Document Retrieval system with public web UI and API.
+- name: Patent Center
+  uri: https://patentcenter.uspto.gov/
+  description: Modern web UI for patent applicants and the underlying public data surface for ODP.
+
+tools:
+- name: USPTO ODP Go client
+  uri: https://github.com/patent-dev/uspto-odp
+  description: Open-source Go client library for the USPTO Open Data Portal API.
+- name: USPTO Open Data Python client
+  uri: https://docs.ip-tools.org/uspto-opendata-python/
+  description: Python client covering legacy PEDS and ODP APIs.
+- name: patent-client
+  uri: https://patent-client.readthedocs.io/
+  description: Multi-source Python client for USPTO and EPO patent data.
+
+standards:
+- name: WIPO ST.66
+  description: XML schema for trademark data exchange; used by TSDR.
+- name: WIPO ST.96
+  description: XML schema for IP data exchange; used by TSDR and other USPTO services.
+- name: Cooperative Patent Classification (CPC)
+  uri: https://www.cooperativepatentclassification.org/
+- name: Nice Classification (NCL)
+  uri: https://www.wipo.int/classifications/nice/

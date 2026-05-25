@@ -1,0 +1,43 @@
+aid: uspto-gov
+name: USPTO API Rate Limits
+specVersion: '0.1'
+description: |
+  Rate-limit policy for USPTO Open Data Portal (ODP) and Trademark Status & Document Retrieval
+  (TSDR) APIs. ODP and TSDR use separate API keys.
+sources:
+- url: https://data.uspto.gov/apis/getting-started
+- url: https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide
+policies:
+- id: tsdr-status
+  scope: TSDR Status Endpoints
+  limit:
+    requests: 60
+    window: 1m
+    per: api-key
+  description: TSDR status endpoints (info.xml, info.json, info.st96.xml) are limited to 60 requests
+    per minute per API key.
+- id: tsdr-downloads
+  scope: TSDR Document Downloads
+  limit:
+    requests: 4
+    window: 1m
+    per: api-key
+  description: TSDR document downloads (PDF bundles, ZIP bundles, mark images) are limited to 4
+    requests per minute per API key.
+- id: odp-general
+  scope: ODP Patent / PTAB / Office Action / Bulk APIs
+  limit:
+    notes: |
+      Per-key rate limits are enforced; specific RPS/RPM values are published in the ODP Getting
+      Started guide and may vary by tier. Repeated 429 responses indicate the limit has been hit.
+      Bulk file downloads may have separate concurrency caps.
+auth:
+- type: api-key
+  header: X-API-KEY
+  registrationUrl: https://data.uspto.gov/apis/getting-started
+- type: api-key
+  header: USPTO-API-KEY
+  applicability: TSDR only
+  registrationUrl: https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide
+contact:
+  email: APIhelp@uspto.gov

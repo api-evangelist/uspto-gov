@@ -1,0 +1,224 @@
+openapi: 3.0.3
+info:
+  title: USPTO Patent Trial and Appeal Board (PTAB) API
+  version: '3.0'
+  description: |
+    PTAB API v3 hosted on the USPTO Open Data Portal. Search and retrieve PTAB trial proceedings
+    (IPR, PGR, CBM, derivation), trial decisions, trial documents, and historical appeal/interference
+    decisions. Coverage 1997 to present; full trial decisions and party briefing since September 2012.
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Proceedings
+  description: PTAB trial proceedings
+- name: Decisions
+  description: PTAB decisions
+- name: Documents
+  description: PTAB documents
+- name: Appeals
+  description: PTAB appeal and interference decisions
+paths:
+  /api/v1/ptab/proceedings/search:
+    get:
+      tags: [Proceedings]
+      summary: Search Proceedings
+      operationId: searchPtabProceedings
+      parameters:
+      - {name: proceedingNumber, in: query, schema: {type: string}}
+      - {name: proceedingTypeCategory, in: query, schema: {type: string, enum: [IPR, PGR, CBM, DER]}}
+      - {name: proceedingFilingDateFrom, in: query, schema: {type: string, format: date}}
+      - {name: proceedingFilingDateTo, in: query, schema: {type: string, format: date}}
+      - {name: subProceedingTypeCategory, in: query, schema: {type: string}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer, default: 25, maximum: 100}}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/ProceedingSearchResponse'}
+  /api/v1/ptab/proceedings/{proceedingNumber}:
+    get:
+      tags: [Proceedings]
+      summary: Get Proceeding
+      operationId: getPtabProceeding
+      parameters:
+      - {name: proceedingNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Proceeding detail
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Proceeding'}
+  /api/v1/ptab/decisions/search:
+    get:
+      tags: [Decisions]
+      summary: Search Decisions
+      operationId: searchPtabDecisions
+      parameters:
+      - {name: proceedingNumber, in: query, schema: {type: string}}
+      - {name: decisionTypeCategory, in: query, schema: {type: string}}
+      - {name: decisionDateFrom, in: query, schema: {type: string, format: date}}
+      - {name: decisionDateTo, in: query, schema: {type: string, format: date}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer, default: 25}}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/DecisionSearchResponse'}
+  /api/v1/ptab/decisions/{decisionIdentifier}:
+    get:
+      tags: [Decisions]
+      summary: Get Decision
+      operationId: getPtabDecision
+      parameters:
+      - {name: decisionIdentifier, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Decision detail
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Decision'}
+  /api/v1/ptab/documents/search:
+    get:
+      tags: [Documents]
+      summary: Search Documents
+      operationId: searchPtabDocuments
+      parameters:
+      - {name: proceedingNumber, in: query, schema: {type: string}}
+      - {name: documentCategory, in: query, schema: {type: string}}
+      - {name: filingDateFrom, in: query, schema: {type: string, format: date}}
+      - {name: filingDateTo, in: query, schema: {type: string, format: date}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer, default: 25}}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/DocumentSearchResponse'}
+  /api/v1/ptab/documents/{documentIdentifier}:
+    get:
+      tags: [Documents]
+      summary: Get Document
+      operationId: getPtabDocument
+      parameters:
+      - {name: documentIdentifier, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Document metadata
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/Document'}
+  /api/v1/ptab/documents/{documentIdentifier}/download:
+    get:
+      tags: [Documents]
+      summary: Download Document
+      operationId: downloadPtabDocument
+      parameters:
+      - {name: documentIdentifier, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: PDF binary
+          content:
+            application/pdf:
+              schema: {type: string, format: binary}
+  /api/v1/ptab/appeals/search:
+    get:
+      tags: [Appeals]
+      summary: Search Appeal Decisions
+      operationId: searchPtabAppeals
+      parameters:
+      - {name: applicationNumberText, in: query, schema: {type: string}}
+      - {name: decisionDateFrom, in: query, schema: {type: string, format: date}}
+      - {name: decisionDateTo, in: query, schema: {type: string, format: date}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/ptab/interferences/search:
+    get:
+      tags: [Appeals]
+      summary: Search Interference Decisions
+      operationId: searchPtabInterferences
+      parameters:
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {type: object}
+components:
+  securitySchemes:
+    ApiKeyAuth: {type: apiKey, in: header, name: X-API-KEY}
+  schemas:
+    Proceeding:
+      type: object
+      properties:
+        proceedingNumber: {type: string}
+        proceedingTypeCategory: {type: string}
+        subProceedingTypeCategory: {type: string}
+        proceedingFilingDate: {type: string, format: date}
+        proceedingStatusCategory: {type: string}
+        respondentPatentNumber: {type: string}
+        respondentApplicationNumberText: {type: string}
+        petitionerPartyName: {type: string}
+        respondentPartyName: {type: string}
+        accordedFilingDate: {type: string, format: date}
+        decisionDate: {type: string, format: date}
+    ProceedingSearchResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        results:
+          type: array
+          items: {$ref: '#/components/schemas/Proceeding'}
+    Decision:
+      type: object
+      properties:
+        decisionIdentifier: {type: string}
+        proceedingNumber: {type: string}
+        decisionTypeCategory: {type: string}
+        decisionDate: {type: string, format: date}
+        decisionOutcomeCategory: {type: string}
+        authoringAdministrativePatentJudgeName: {type: string}
+        documentIdentifier: {type: string}
+    DecisionSearchResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        results:
+          type: array
+          items: {$ref: '#/components/schemas/Decision'}
+    Document:
+      type: object
+      properties:
+        documentIdentifier: {type: string}
+        proceedingNumber: {type: string}
+        documentTitleText: {type: string}
+        documentCategory: {type: string}
+        filingDate: {type: string, format: date}
+        filingPartyCategory: {type: string}
+        pageQuantity: {type: integer}
+        downloadUrl: {type: string, format: uri}
+    DocumentSearchResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        results:
+          type: array
+          items: {$ref: '#/components/schemas/Document'}

@@ -1,0 +1,18 @@
+name: uspto-tsdr-documents
+title: USPTO TSDR Documents
+description: |
+  Naftiko capability for retrieving trademark case file wrapper documents and mark images (drawings,
+  specimens) via the USPTO TSDR API. Downloads are heavily rate-limited (4/minute/key).
+api: uspto-gov:uspto-tsdr-api
+auth:
+  type: api-key
+  header: USPTO-API-KEY
+  envVar: USPTO_TSDR_API_KEY
+rateLimit:
+  requests: 4
+  window: 1m
+endpoints:
+- getCaseDocumentsPdfBundle
+- getCaseDocumentsZipBundle
+- getCaseDocumentPdf
+- getMarkImage

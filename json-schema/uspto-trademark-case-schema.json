@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/uspto-gov/main/json-schema/uspto-trademark-case-schema.json",
+  "title": "USPTO Trademark Case",
+  "description": "A U.S. trademark case record as returned by the USPTO TSDR API.",
+  "type": "object",
+  "required": ["serialNumber"],
+  "properties": {
+    "serialNumber": {"type": "string", "pattern": "^[0-9]{8}$"},
+    "registrationNumber": {"type": "string"},
+    "markIdentification": {"type": "string"},
+    "statusCode": {"type": "string"},
+    "statusDescription": {"type": "string"},
+    "statusDate": {"type": "string", "format": "date"},
+    "filingDate": {"type": "string", "format": "date"},
+    "registrationDate": {"type": "string", "format": "date"},
+    "applicationFilingBasis": {"type": "string", "enum": ["1A", "1B", "44D", "44E", "66A"]},
+    "owners": {"type": "array", "items": {"$ref": "#/$defs/Party"}},
+    "goodsServices": {"type": "array", "items": {"$ref": "#/$defs/GoodsServices"}},
+    "prosecutionHistory": {"type": "array", "items": {"$ref": "#/$defs/ProsecutionEvent"}}
+  },
+  "$defs": {
+    "Party": {
+      "type": "object",
+      "properties": {
+        "partyName": {"type": "string"},
+        "partyType": {"type": "string"},
+        "addressLine": {"type": "string"},
+        "cityName": {"type": "string"},
+        "geographicRegionName": {"type": "string"},
+        "countryCode": {"type": "string"},
+        "legalEntityType": {"type": "string"}
+      }
+    },
+    "GoodsServices": {
+      "type": "object",
+      "properties": {
+        "internationalClass": {"type": "string"},
+        "usClass": {"type": "string"},
+        "goodsServicesText": {"type": "string"}
+      }
+    },
+    "ProsecutionEvent": {
+      "type": "object",
+      "properties": {
+        "eventCode": {"type": "string"},
+        "eventDescription": {"type": "string"},
+        "eventDate": {"type": "string", "format": "date"}
+      }
+    }
+  }
+}

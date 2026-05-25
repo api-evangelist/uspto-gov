@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: USPTO PatentsView API
+  version: '1.0'
+  description: |
+    USPTO research-focused patent data API with inventor disambiguation, assignee, location,
+    CPC/USPC classification, and citation endpoints. Original endpoints at PatentsView.org;
+    migrated to the USPTO Open Data Portal (data.uspto.gov) on March 20, 2026. Clients should
+    use an ODP API key going forward.
+  contact: {name: USPTO API Help, email: APIhelp@uspto.gov}
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+- url: https://search.patentsview.org
+  description: Legacy PatentsView
+security:
+- ApiKeyAuth: []
+paths:
+  /api/v1/patentsview/patents:
+    get:
+      summary: Query Patents
+      operationId: queryPatents
+      parameters:
+      - {name: q, in: query, schema: {type: string}, description: JSON query expression}
+      - {name: f, in: query, schema: {type: string}, description: Comma-separated field list}
+      - {name: s, in: query, schema: {type: string}, description: Sort spec}
+      - {name: o, in: query, schema: {type: string}, description: Pagination options}
+      responses:
+        '200':
+          description: Patent records
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/PatentsViewResponse'}
+  /api/v1/patentsview/inventors:
+    get:
+      summary: Query Inventors
+      operationId: queryInventors
+      parameters:
+      - {name: q, in: query, schema: {type: string}}
+      - {name: f, in: query, schema: {type: string}}
+      - {name: o, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Inventor records (with disambiguation IDs)
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patentsview/assignees:
+    get:
+      summary: Query Assignees
+      operationId: queryAssignees
+      parameters:
+      - {name: q, in: query, schema: {type: string}}
+      - {name: f, in: query, schema: {type: string}}
+      - {name: o, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Assignee records
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patentsview/locations:
+    get:
+      summary: Query Locations
+      operationId: queryLocations
+      parameters:
+      - {name: q, in: query, schema: {type: string}}
+      - {name: f, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Location records
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patentsview/cpc_subsections:
+    get:
+      summary: Query CPC Subsections
+      operationId: queryCpcSubsections
+      parameters:
+      - {name: q, in: query, schema: {type: string}}
+      - {name: f, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: CPC subsection records
+          content:
+            application/json:
+              schema: {type: object}
+components:
+  securitySchemes:
+    ApiKeyAuth: {type: apiKey, in: header, name: X-API-KEY}
+  schemas:
+    PatentsViewResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        total_patent_count: {type: integer}
+        patents:
+          type: array
+          items:
+            type: object
+            properties:
+              patent_number: {type: string}
+              patent_title: {type: string}
+              patent_date: {type: string, format: date}
+              patent_type: {type: string}
+              inventors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    inventor_id: {type: string}
+                    inventor_first_name: {type: string}
+                    inventor_last_name: {type: string}
+              assignees:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    assignee_id: {type: string}
+                    assignee_organization: {type: string}

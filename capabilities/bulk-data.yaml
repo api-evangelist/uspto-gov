@@ -1,0 +1,15 @@
+name: uspto-bulk-data
+title: USPTO Bulk Data
+description: |
+  Naftiko capability for discovering and downloading USPTO patent and trademark bulk datasets
+  (bibliographic, assignment, classification, office-action weekly archives) via the USPTO ODP Bulk
+  Data Storage System (BDSS) API.
+api: uspto-gov:uspto-bulk-data-api
+auth:
+  type: api-key
+  header: X-API-KEY
+  envVar: USPTO_ODP_API_KEY
+endpoints:
+- searchBulkProducts
+- getBulkProduct
+- downloadBulkProductFile
