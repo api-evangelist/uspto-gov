@@ -1,0 +1,1548 @@
+{
+  "item": [
+    {
+      "id": "25177552-563b-49f9-8323-9764a702c065",
+      "name": "Search",
+      "description": {
+        "content": "Search patent applications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c0af03e-b2d2-4f43-8bc0-92bd48f4a975",
+          "name": "Search Patent Applications",
+          "request": {
+            "name": "Search Patent Applications",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Search query (Lucene-style)."
+                },
+                {
+                  "disabled": false,
+                  "key": "applicationNumberText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "patentNumber",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filingDateFrom",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filingDateTo",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d2fb4754-09fe-4e6c-98a2-4701204c0a07",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9191,\n  \"offset\": 1709,\n  \"limit\": 3729,\n  \"patentBag\": [\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"1956-07-07\",\n      \"grantDate\": \"1969-12-20\",\n      \"publicationDate\": \"1978-09-19\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1993-05-18\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"1959-11-17\",\n      \"grantDate\": \"1994-07-11\",\n      \"publicationDate\": \"2025-10-01\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1989-10-15\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1363bb03-2146-41cf-9b63-a24e53b58625",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed878c0d-d20c-45bc-a783-71cdd39b66fb",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76c9e674-68a8-4758-a498-c8bd7143e2c9",
+          "name": "Search Patent Applications With Body",
+          "request": {
+            "name": "Search Patent Applications With Body",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"q\": \"<string>\",\n  \"filters\": {\n    \"key_0\": \"string\"\n  },\n  \"sort\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"offset\": \"<integer>\",\n  \"limit\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb867548-c66d-444b-b504-0af945f48a66",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"q\": \"<string>\",\n  \"filters\": {\n    \"key_0\": 9276.89266803526\n  },\n  \"sort\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"offset\": \"<integer>\",\n  \"limit\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6557,\n  \"offset\": 1746,\n  \"limit\": 29,\n  \"patentBag\": [\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"1950-06-17\",\n      \"grantDate\": \"1960-01-28\",\n      \"publicationDate\": \"2021-05-11\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1973-01-10\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"1988-10-31\",\n      \"grantDate\": \"2024-12-06\",\n      \"publicationDate\": \"1988-11-15\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1948-12-15\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "25ed1074-58b4-4e20-bb32-20debd0a4f41",
+      "name": "Application",
+      "description": {
+        "content": "Retrieve patent application data",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "df1070c0-63c8-47d4-a1c9-7950ee4f263c",
+          "name": "Get Patent Application",
+          "request": {
+            "name": "Get Patent Application",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "39fc3c98-e89c-486a-85bb-61e209fea7c0",
+              "name": "Patent application file wrapper.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationNumberText\": \"string\",\n  \"patentNumber\": \"string\",\n  \"filingDate\": \"2023-02-01\",\n  \"grantDate\": \"1983-01-29\",\n  \"publicationDate\": \"1975-12-14\",\n  \"publicationNumber\": \"string\",\n  \"applicationTypeCategory\": \"string\",\n  \"applicationStatusCode\": \"string\",\n  \"applicationStatusDescriptionText\": \"string\",\n  \"applicationStatusDate\": \"2008-09-01\",\n  \"inventionTitle\": \"string\",\n  \"firstInventorToFileIndicator\": \"string\",\n  \"examinerNameText\": \"string\",\n  \"groupArtUnitNumber\": \"string\",\n  \"classSubclass\": \"string\",\n  \"cpcClassificationBag\": [\n    \"string\",\n    \"string\"\n  ],\n  \"applicantBag\": [\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    },\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    }\n  ],\n  \"inventorBag\": [\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    },\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ce68649-8377-462e-8b16-2cf592f379a5",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3f926d8a-4be4-41e7-aed2-5b333650e819",
+          "name": "Get Patent Application Metadata",
+          "request": {
+            "name": "Get Patent Application Metadata",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "meta-data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "19095721-41f0-48ad-a909-57391697dce2",
+              "name": "Application metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "meta-data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"applicationNumberText\": \"string\",\n  \"patentNumber\": \"string\",\n  \"filingDate\": \"1981-03-30\",\n  \"grantDate\": \"2008-08-17\",\n  \"publicationDate\": \"2016-09-05\",\n  \"publicationNumber\": \"string\",\n  \"applicationTypeCategory\": \"string\",\n  \"applicationStatusCode\": \"string\",\n  \"applicationStatusDescriptionText\": \"string\",\n  \"applicationStatusDate\": \"2016-10-11\",\n  \"inventionTitle\": \"string\",\n  \"firstInventorToFileIndicator\": \"string\",\n  \"examinerNameText\": \"string\",\n  \"groupArtUnitNumber\": \"string\",\n  \"classSubclass\": \"string\",\n  \"cpcClassificationBag\": [\n    \"string\",\n    \"string\"\n  ],\n  \"applicantBag\": [\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    },\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    }\n  ],\n  \"inventorBag\": [\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    },\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"nameLineOneText\": \"string\",\n      \"country\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5432d363-7296-4b41-95fc-3dd827b6b3e0",
+          "name": "Get Patent Term Adjustment",
+          "request": {
+            "name": "Get Patent Term Adjustment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "adjustment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4b18dee-cfa3-4740-a412-0e8ef6e92c09",
+              "name": "Patent term adjustment data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "adjustment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "473e28ad-090c-4047-aaf0-3074d47cbb86",
+          "name": "Get Application Attorney/Agent",
+          "request": {
+            "name": "Get Application Attorney/Agent",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "attorney"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f27426d-8594-485e-bfe7-c8f3408af8db",
+              "name": "Attorney/agent information.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "attorney"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74d1a76f-0f4c-4908-8052-541dfb4d2e48",
+          "name": "Get Application Continuity",
+          "request": {
+            "name": "Get Application Continuity",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "continuity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1108ea9a-3d5e-4116-bb2f-062c142ad91e",
+              "name": "Parent/child continuity relationships.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "continuity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95bbcf09-e399-4f12-ab5f-7de4cfa579de",
+          "name": "Get Application Foreign Priority",
+          "request": {
+            "name": "Get Application Foreign Priority",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "foreign-priority"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a044047-dd7c-40cb-95ad-cb9491a3570b",
+              "name": "Foreign priority claims.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "foreign-priority"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5dfc80e2-3d25-47e9-ab9e-f3f8667d59ea",
+          "name": "Get Application Transactions",
+          "request": {
+            "name": "Get Application Transactions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8009d495-1488-4d67-9c20-417cf474b7d2",
+              "name": "Prosecution transaction history.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "c16075e4-6012-4276-84fa-2558de47574c",
+      "name": "Documents",
+      "description": {
+        "content": "Retrieve patent application documents",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "194000b0-7111-478f-9abc-4ea496197be7",
+          "name": "List Application Documents",
+          "request": {
+            "name": "List Application Documents",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c50ddbff-4c05-4feb-8f20-5d2279be7ed4",
+              "name": "List of documents in the file wrapper.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"documentIdentifier\": \"string\",\n    \"documentCode\": \"string\",\n    \"documentCodeDescriptionText\": \"string\",\n    \"officialDate\": \"2012-03-27\",\n    \"pageTotalQuantity\": 4262,\n    \"directionCategory\": \"string\",\n    \"downloadOptionBag\": [\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"https://bEGJvIduShRVvwlrexOJCbPiCd.oplvyvl6JYg-JF8o0\"\n      },\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"http://VkbnosINChNBxPXdtNItnBA.wkfzI17lH,k7v6gX5lwBLigFJkQtHxqVg\"\n      }\n    ]\n  },\n  {\n    \"documentIdentifier\": \"string\",\n    \"documentCode\": \"string\",\n    \"documentCodeDescriptionText\": \"string\",\n    \"officialDate\": \"1975-01-09\",\n    \"pageTotalQuantity\": 6915,\n    \"directionCategory\": \"string\",\n    \"downloadOptionBag\": [\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"https://MpuUVkU.xkpxaCVbW\"\n      },\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"https://ND.dpnHiGqV0M\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b98e2f71-8f25-41ab-8e44-07c724990ada",
+          "name": "Download Application Document PDF",
+          "request": {
+            "name": "Download Application Document PDF",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "download",
+                "applications",
+                ":applicationNumberText",
+                "{{documentId}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "612a8139-235e-4ec6-9e3c-4f3e58732648",
+              "name": "PDF binary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "download",
+                    "applications",
+                    ":applicationNumberText",
+                    "{{documentId}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fd1f0d13-7e21-4358-ab22-b335cd736024",
+      "name": "Assignments",
+      "description": {
+        "content": "Retrieve assignment records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97330aac-b716-4878-8ff6-64b317071d78",
+          "name": "Get Patent Assignments",
+          "request": {
+            "name": "Get Patent Assignments",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "assignment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d4cba780-e38e-4086-b919-c1e70aab9407",
+              "name": "Assignment history for the application.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "assignment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"reelNumber\": \"string\",\n    \"frameNumber\": \"string\",\n    \"recordedDate\": \"1966-08-23\",\n    \"executionDate\": \"1998-05-04\",\n    \"conveyanceText\": \"string\",\n    \"assignorBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ],\n    \"assigneeBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ]\n  },\n  {\n    \"reelNumber\": \"string\",\n    \"frameNumber\": \"string\",\n    \"recordedDate\": \"1994-02-20\",\n    \"executionDate\": \"2023-09-02\",\n    \"conveyanceText\": \"string\",\n    \"assignorBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ],\n    \"assigneeBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "documentId"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c1617fc4-5f0c-4654-baf3-6878e8aaf826",
+    "name": "USPTO Patent File Wrapper API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO Open Data Portal (ODP) Patent File Wrapper API. Search and retrieve U.S. patent\napplication file wrappers including bibliographic data, assignment history, prosecution\ndocuments (office actions, responses, claims, drawings), continuity, foreign priority,\nattorney/agent info, and patent term adjustments. Requires an ODP API key.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

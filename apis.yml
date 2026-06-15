@@ -1,242 +1,230 @@
 aid: uspto-gov
 url: https://raw.githubusercontent.com/api-evangelist/uspto-gov/refs/heads/main/apis.yml
 apis:
-- aid: uspto-gov:uspto-patent-file-wrapper-api
-  name: USPTO Patent File Wrapper API
-  tags:
-  - Patents
-  - File Wrapper
-  - Government
-  - Intellectual Property
-  - Open Data
-  humanURL: https://data.uspto.gov/apis/patent-file-wrapper/search
-  properties:
-  - url: https://data.uspto.gov/apis/patent-file-wrapper/search
-    type: Documentation
-  - url: https://data.uspto.gov/apis/patent-file-wrapper/application-data
-    type: Documentation
-  - url: https://data.uspto.gov/apis/patent-file-wrapper/documents
-    type: Documentation
-  - url: https://data.uspto.gov/apis/patent-file-wrapper/assignments
-    type: Documentation
-  - url: openapi/uspto-patent-file-wrapper-openapi.yml
-    type: OpenAPI
-  - url: json-schema/uspto-patent-application-schema.json
-    type: JSONSchema
-  - url: json-ld/uspto-gov-context.jsonld
-    type: JSONLD
-  - type: NaftikoCapability
-    url: capabilities/patent-file-wrapper.yaml
-  description: Core USPTO Open Data Portal (ODP) API for searching and retrieving U.S. patent application
-    file wrappers — bibliographic data, assignment history, prosecution documents (office actions,
-    responses, claims, drawings), continuity, foreign priority, attorney/agent info, and patent term
-    adjustments. Replaces the legacy Patent Examination Data System (PEDS) and Patent Application
-    Information Retrieval (PAIR). Requires an ODP API key. Data covers all publicly available U.S.
-    patent applications from Patent Center.
-- aid: uspto-gov:uspto-ptab-api
-  name: USPTO Patent Trial and Appeal Board (PTAB) API
-  tags:
-  - PTAB
-  - Patents
-  - Trials
-  - Decisions
-  - Government
-  - Intellectual Property
-  - Open Data
-  humanURL: https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp
-  properties:
-  - url: https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp
-    type: Documentation
-  - url: https://data.uspto.gov/apis/ptab-trials/search-documents
-    type: Documentation
-  - url: https://data.uspto.gov/apis/ptab-trials/search-decisions
-    type: Documentation
-  - url: openapi/uspto-ptab-openapi.yml
-    type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/ptab-trials.yaml
-  description: Patent Trial and Appeal Board (PTAB) API v3 hosted on the Open Data Portal. 19 endpoints
-    covering trial proceedings (IPR, PGR, CBM, derivation), trial decisions (institution, final written,
-    terminations), trial documents (petitions, patent owner responses, expert declarations), and trial
-    appeal/interference decisions. Coverage from 1997 to present; full PTAB Trial decisions and party
-    briefing since September 2012. The legacy Developer Hub PTAB API was fully retired on January 6,
-    2026.
-- aid: uspto-gov:uspto-tsdr-api
-  name: USPTO Trademark Status and Document Retrieval (TSDR) API
-  tags:
-  - Trademarks
-  - TSDR
-  - Government
-  - Intellectual Property
-  - Document Retrieval
-  - Open Data
-  humanURL: https://developer.uspto.gov/api-catalog/tsdr-data-api
-  properties:
-  - url: https://developer.uspto.gov/api-catalog/tsdr-data-api
-    type: Documentation
-  - url: https://developer.uspto.gov/swagger/tsdr-api-v1
-    type: Documentation
-  - url: https://tsdr.uspto.gov/
-    type: Portal
-  - url: https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf
-    type: Documentation
-  - url: openapi/uspto-tsdr-openapi.yml
-    type: OpenAPI
-  - url: json-schema/uspto-trademark-case-schema.json
-    type: JSONSchema
-  - type: NaftikoCapability
-    url: capabilities/tsdr-status.yaml
-  - type: NaftikoCapability
-    url: capabilities/tsdr-documents.yaml
-  description: Trademark Status & Document Retrieval (TSDR) Data API — 24 endpoints (hosted on a
-    separate server with a separate API key from the rest of ODP) for retrieving trademark case status,
-    documents, and images by serial number, registration number, reference number, or international
-    registration number. Returns case metadata in XML, JSON, and ST.96 formats and lets clients pull
-    full file wrapper PDFs and ZIP packages. Rate limited at 60 requests/min/key for status calls and
-    4 requests/min/key for PDF/ZIP downloads.
-- aid: uspto-gov:uspto-office-action-api
-  name: USPTO Office Action APIs
-  tags:
-  - Patents
-  - Office Actions
-  - Citations
-  - Rejections
-  - Government
-  - Intellectual Property
-  - Machine Learning
-  - Open Data
-  humanURL: https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3
-  properties:
-  - url: https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3
-    type: Documentation
-  - url: https://developer.uspto.gov/api-catalog/uspto-office-action-citations-api
-    type: Documentation
-  - url: openapi/uspto-office-actions-openapi.yml
-    type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/office-actions.yaml
-  description: Family of 8 endpoints covering structured Office Action data — Text Retrieval, Citations,
-    Rejections, and Enriched Citations. The Enriched Citation API uses machine-learning information
-    extraction and entity resolution to normalize patent and non-patent literature citations against
-    the application reference list. Office Action Weekly Archives are surfaced as bulk product OACT
-    via SearchBulkProducts/GetBulkProduct. All legacy Office Action and Enriched Citation APIs were
-    migrated to ODP ahead of the May 29, 2026 Developer Hub decommission.
-- aid: uspto-gov:uspto-bulk-data-api
-  name: USPTO Bulk Data Storage System (BDSS) API
-  tags:
-  - Bulk Data
-  - Patents
-  - Trademarks
-  - Datasets
-  - Government
-  - Open Data
-  humanURL: https://data.uspto.gov/apis/bulk-data/search
-  properties:
-  - url: https://data.uspto.gov/apis/bulk-data/search
-    type: Documentation
-  - url: https://data.uspto.gov/apis/bulk-data/product
-    type: Documentation
-  - url: https://data.uspto.gov/patent-file-wrapper/bulkdata/entire
-    type: Documentation
-  - url: https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf
-    type: Documentation
-  - url: openapi/uspto-bulk-data-openapi.yml
-    type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/bulk-data.yaml
-  description: ODP Bulk Data API exposing the Bulk Data Storage System (BDSS) — SearchBulkProducts and
-    GetBulkProduct operations for downloading patent and trademark bulk datasets (bibliographic,
-    assignment, classification, office action weekly archives, etc.) as Entire Datasets (10-year
-    increments) or Delta Datasets (daily increments) in XML/JSON. Methods support product lookup but
-    do not allow general filter/limit/offset/order-by database queries.
-- aid: uspto-gov:patentsview-api
-  name: USPTO PatentsView API
-  tags:
-  - Patents
-  - Inventors
-  - Research
-  - Disambiguation
-  - Government
-  - Open Data
-  humanURL: https://developer.uspto.gov/api-catalog/patentsview
-  properties:
-  - url: https://developer.uspto.gov/api-catalog/patentsview
-    type: Documentation
-  - url: https://patentsview.org/apis/api-endpoints
-    type: Documentation
-  - url: openapi/uspto-patentsview-openapi.yml
-    type: OpenAPI
-  description: USPTO research-oriented patent data API with inventor disambiguation, assignee, location,
-    CPC/USPC classification, and citation endpoints. The database integrates the best available tools
-    for inventor disambiguation and data quality control, supporting bibliometric and innovation
-    research. PatentsView migrated into the USPTO Open Data Portal on March 20, 2026 — clients should
-    obtain an ODP API key and use the ODP-hosted endpoints going forward.
+  - aid: uspto-gov:uspto-patent-file-wrapper-api
+    name: USPTO Patent File Wrapper API
+    tags:
+      - Patents
+      - File Wrapper
+      - Government
+      - Intellectual Property
+      - Open Data
+    humanURL: https://data.uspto.gov/apis/patent-file-wrapper/search
+    properties:
+      - url: https://data.uspto.gov/apis/patent-file-wrapper/search
+        type: Documentation
+      - url: https://data.uspto.gov/apis/patent-file-wrapper/application-data
+        type: Documentation
+      - url: https://data.uspto.gov/apis/patent-file-wrapper/documents
+        type: Documentation
+      - url: https://data.uspto.gov/apis/patent-file-wrapper/assignments
+        type: Documentation
+      - url: openapi/uspto-patent-file-wrapper-openapi.yml
+        type: OpenAPI
+      - url: json-schema/uspto-patent-application-schema.json
+        type: JSONSchema
+      - url: json-ld/uspto-gov-context.jsonld
+        type: JSONLD
+    description: >-
+      Core USPTO Open Data Portal (ODP) API for searching and retrieving U.S. patent application file wrappers —
+      bibliographic data, assignment history, prosecution documents (office actions, responses, claims, drawings),
+      continuity, foreign priority, attorney/agent info, and patent term adjustments. Replaces the legacy Patent
+      Examination Data System (PEDS) and Patent Application Information Retrieval (PAIR). Requires an ODP API key. Data
+      covers all publicly available U.S. patent applications from Patent Center.
+  - aid: uspto-gov:uspto-ptab-api
+    name: USPTO Patent Trial and Appeal Board (PTAB) API
+    tags:
+      - PTAB
+      - Patents
+      - Trials
+      - Decisions
+      - Government
+      - Intellectual Property
+      - Open Data
+    humanURL: https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp
+    properties:
+      - url: https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp
+        type: Documentation
+      - url: https://data.uspto.gov/apis/ptab-trials/search-documents
+        type: Documentation
+      - url: https://data.uspto.gov/apis/ptab-trials/search-decisions
+        type: Documentation
+      - url: openapi/uspto-ptab-openapi.yml
+        type: OpenAPI
+    description: >-
+      Patent Trial and Appeal Board (PTAB) API v3 hosted on the Open Data Portal. 19 endpoints covering trial
+      proceedings (IPR, PGR, CBM, derivation), trial decisions (institution, final written, terminations), trial
+      documents (petitions, patent owner responses, expert declarations), and trial appeal/interference decisions.
+      Coverage from 1997 to present; full PTAB Trial decisions and party briefing since September 2012. The legacy
+      Developer Hub PTAB API was fully retired on January 6, 2026.
+  - aid: uspto-gov:uspto-tsdr-api
+    name: USPTO Trademark Status and Document Retrieval (TSDR) API
+    tags:
+      - Trademarks
+      - TSDR
+      - Government
+      - Intellectual Property
+      - Document Retrieval
+      - Open Data
+    humanURL: https://developer.uspto.gov/api-catalog/tsdr-data-api
+    properties:
+      - url: https://developer.uspto.gov/api-catalog/tsdr-data-api
+        type: Documentation
+      - url: https://developer.uspto.gov/swagger/tsdr-api-v1
+        type: Documentation
+      - url: https://tsdr.uspto.gov/
+        type: Portal
+      - url: https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf
+        type: Documentation
+      - url: openapi/uspto-tsdr-openapi.yml
+        type: OpenAPI
+      - url: json-schema/uspto-trademark-case-schema.json
+        type: JSONSchema
+    description: >-
+      Trademark Status & Document Retrieval (TSDR) Data API — 24 endpoints (hosted on a separate server with a separate
+      API key from the rest of ODP) for retrieving trademark case status, documents, and images by serial number,
+      registration number, reference number, or international registration number. Returns case metadata in XML, JSON,
+      and ST.96 formats and lets clients pull full file wrapper PDFs and ZIP packages. Rate limited at 60
+      requests/min/key for status calls and 4 requests/min/key for PDF/ZIP downloads.
+  - aid: uspto-gov:uspto-office-action-api
+    name: USPTO Office Action APIs
+    tags:
+      - Patents
+      - Office Actions
+      - Citations
+      - Rejections
+      - Government
+      - Intellectual Property
+      - Machine Learning
+      - Open Data
+    humanURL: https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3
+    properties:
+      - url: https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3
+        type: Documentation
+      - url: https://developer.uspto.gov/api-catalog/uspto-office-action-citations-api
+        type: Documentation
+      - url: openapi/uspto-office-actions-openapi.yml
+        type: OpenAPI
+    description: >-
+      Family of 8 endpoints covering structured Office Action data — Text Retrieval, Citations, Rejections, and Enriched
+      Citations. The Enriched Citation API uses machine-learning information extraction and entity resolution to
+      normalize patent and non-patent literature citations against the application reference list. Office Action Weekly
+      Archives are surfaced as bulk product OACT via SearchBulkProducts/GetBulkProduct. All legacy Office Action and
+      Enriched Citation APIs were migrated to ODP ahead of the May 29, 2026 Developer Hub decommission.
+  - aid: uspto-gov:uspto-bulk-data-api
+    name: USPTO Bulk Data Storage System (BDSS) API
+    tags:
+      - Bulk Data
+      - Patents
+      - Trademarks
+      - Datasets
+      - Government
+      - Open Data
+    humanURL: https://data.uspto.gov/apis/bulk-data/search
+    properties:
+      - url: https://data.uspto.gov/apis/bulk-data/search
+        type: Documentation
+      - url: https://data.uspto.gov/apis/bulk-data/product
+        type: Documentation
+      - url: https://data.uspto.gov/patent-file-wrapper/bulkdata/entire
+        type: Documentation
+      - url: https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf
+        type: Documentation
+      - url: openapi/uspto-bulk-data-openapi.yml
+        type: OpenAPI
+    description: >-
+      ODP Bulk Data API exposing the Bulk Data Storage System (BDSS) — SearchBulkProducts and GetBulkProduct operations
+      for downloading patent and trademark bulk datasets (bibliographic, assignment, classification, office action
+      weekly archives, etc.) as Entire Datasets (10-year increments) or Delta Datasets (daily increments) in XML/JSON.
+      Methods support product lookup but do not allow general filter/limit/offset/order-by database queries.
+  - aid: uspto-gov:patentsview-api
+    name: USPTO PatentsView API
+    tags:
+      - Patents
+      - Inventors
+      - Research
+      - Disambiguation
+      - Government
+      - Open Data
+    humanURL: https://developer.uspto.gov/api-catalog/patentsview
+    properties:
+      - url: https://developer.uspto.gov/api-catalog/patentsview
+        type: Documentation
+      - url: https://patentsview.org/apis/api-endpoints
+        type: Documentation
+      - url: openapi/uspto-patentsview-openapi.yml
+        type: OpenAPI
+    description: >-
+      USPTO research-oriented patent data API with inventor disambiguation, assignee, location, CPC/USPC classification,
+      and citation endpoints. The database integrates the best available tools for inventor disambiguation and data
+      quality control, supporting bibliometric and innovation research. PatentsView migrated into the USPTO Open Data
+      Portal on March 20, 2026 — clients should obtain an ODP API key and use the ODP-hosted endpoints going forward.
 name: USPTO
 tags:
-- Patents
-- Trademarks
-- Intellectual Property
-- Government
-- Federal
-- Open Data
-- PTAB
-- TSDR
+  - Patents
+  - Trademarks
+  - Intellectual Property
+  - Government
+  - Federal
+  - Open Data
+  - PTAB
+  - TSDR
 kind: government
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
-- type: Website
-  url: https://www.uspto.gov/
-- type: Portal
-  url: https://data.uspto.gov/
-- type: Documentation
-  url: https://developer.uspto.gov/api-catalog
-  name: API Catalog
-- type: Documentation
-  url: https://data.uspto.gov/apis/getting-started
-  name: ODP Getting Started
-- type: Documentation
-  url: https://data.uspto.gov/apis/transition-guide
-  name: PEDS to ODP Transition Guide
-- type: Documentation
-  url: https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf
-  name: BDSS to ODP API Mapping
-- type: Documentation
-  url: https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf
-  name: TSDR API Key Manager User Guide
-- type: Authentication
-  url: https://data.uspto.gov/apis/getting-started
-  name: ODP API Key Registration
-- type: RateLimits
-  url: https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide
-  name: TSDR Rate Limits
-- type: Support
-  url: mailto:APIhelp@uspto.gov
-  name: USPTO API Help
-- type: Support
-  url: mailto:contactUXD@uspto.gov
-  name: USPTO Developer Support
-- type: GitHub
-  url: https://github.com/USPTO
-- type: DataPortal
-  url: https://catalog.data.gov/organization/uspto-gov
-  name: USPTO on data.gov
-- type: BulkData
-  url: https://data.uspto.gov/patent-file-wrapper/bulkdata/entire
-  name: Patent File Wrapper Bulk Datasets
-- type: Trademark
-  url: https://tsdr.uspto.gov/
-  name: TSDR Web Portal
-- type: Trademark
-  url: https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data
-  name: Trademark Bulk Data
-- type: Patent
-  url: https://patentcenter.uspto.gov/
-  name: Patent Center
-- type: Vocabulary
-  url: vocabulary/uspto-gov-vocabulary.yml
-- type: RateLimits
-  url: rate-limits/uspto-gov-rate-limits.yml
+  - type: Website
+    url: https://www.uspto.gov/
+  - type: Portal
+    url: https://data.uspto.gov/
+  - type: Documentation
+    url: https://developer.uspto.gov/api-catalog
+    name: API Catalog
+  - type: Documentation
+    url: https://data.uspto.gov/apis/getting-started
+    name: ODP Getting Started
+  - type: Documentation
+    url: https://data.uspto.gov/apis/transition-guide
+    name: PEDS to ODP Transition Guide
+  - type: Documentation
+    url: https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf
+    name: BDSS to ODP API Mapping
+  - type: Documentation
+    url: https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf
+    name: TSDR API Key Manager User Guide
+  - type: Authentication
+    url: https://data.uspto.gov/apis/getting-started
+    name: ODP API Key Registration
+  - type: RateLimits
+    url: https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide
+    name: TSDR Rate Limits
+  - type: Support
+    url: mailto:APIhelp@uspto.gov
+    name: USPTO API Help
+  - type: Support
+    url: mailto:contactUXD@uspto.gov
+    name: USPTO Developer Support
+  - type: GitHub
+    url: https://github.com/USPTO
+  - type: DataPortal
+    url: https://catalog.data.gov/organization/uspto-gov
+    name: USPTO on data.gov
+  - type: BulkData
+    url: https://data.uspto.gov/patent-file-wrapper/bulkdata/entire
+    name: Patent File Wrapper Bulk Datasets
+  - type: Trademark
+    url: https://tsdr.uspto.gov/
+    name: TSDR Web Portal
+  - type: Trademark
+    url: https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data
+    name: Trademark Bulk Data
+  - type: Patent
+    url: https://patentcenter.uspto.gov/
+    name: Patent Center
+  - type: Vocabulary
+    url: vocabulary/uspto-gov-vocabulary.yml
+  - type: RateLimits
+    url: rate-limits/uspto-gov-rate-limits.yml
 created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'

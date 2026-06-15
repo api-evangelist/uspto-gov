@@ -1,0 +1,299 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Patent File Wrapper API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Patent Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search query (Lucene-style)."
+              },
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "patentNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Patent Applications"
+        },
+        {
+          "info": {
+            "name": "Search Patent Applications With Body",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search Patent Applications With Body"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Patent Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Application"
+        },
+        {
+          "info": {
+            "name": "Get Patent Application Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/meta-data",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Application Metadata"
+        },
+        {
+          "info": {
+            "name": "Get Patent Term Adjustment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/adjustment",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Term Adjustment"
+        },
+        {
+          "info": {
+            "name": "Get Application Attorney/Agent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/attorney",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Attorney/Agent"
+        },
+        {
+          "info": {
+            "name": "Get Application Continuity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/continuity",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Continuity"
+        },
+        {
+          "info": {
+            "name": "Get Application Foreign Priority",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/foreign-priority",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Foreign Priority"
+        },
+        {
+          "info": {
+            "name": "Get Application Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/transactions",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Transactions"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Assignments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Patent Assignments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/assignment",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Assignments"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Application Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/documents",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Application Documents"
+        },
+        {
+          "info": {
+            "name": "Download Application Document PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/download/applications/:applicationNumberText/:documentId.pdf",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download Application Document PDF"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

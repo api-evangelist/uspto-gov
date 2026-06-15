@@ -1,0 +1,157 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO PatentsView API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Query Patents",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/patentsview/patents",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query",
+            "description": "JSON query expression"
+          },
+          {
+            "name": "f",
+            "value": "",
+            "type": "query",
+            "description": "Comma-separated field list"
+          },
+          {
+            "name": "s",
+            "value": "",
+            "type": "query",
+            "description": "Sort spec"
+          },
+          {
+            "name": "o",
+            "value": "",
+            "type": "query",
+            "description": "Pagination options"
+          }
+        ]
+      },
+      "docs": "Query Patents"
+    },
+    {
+      "info": {
+        "name": "Query Inventors",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/patentsview/inventors",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "f",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "o",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Query Inventors"
+    },
+    {
+      "info": {
+        "name": "Query Assignees",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/patentsview/assignees",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "f",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "o",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Query Assignees"
+    },
+    {
+      "info": {
+        "name": "Query Locations",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/patentsview/locations",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "f",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Query Locations"
+    },
+    {
+      "info": {
+        "name": "Query CPC Subsections",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/patentsview/cpc_subsections",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "f",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Query CPC Subsections"
+    }
+  ],
+  "bundled": true
+}

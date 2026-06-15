@@ -1,0 +1,583 @@
+{
+  "item": [
+    {
+      "id": "6ab1db6c-633e-46ef-b55f-bdfe7a90379a",
+      "name": "Query Patents",
+      "request": {
+        "name": "Query Patents",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "v1",
+            "patentsview",
+            "patents"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>",
+              "description": "JSON query expression"
+            },
+            {
+              "disabled": false,
+              "key": "f",
+              "value": "<string>",
+              "description": "Comma-separated field list"
+            },
+            {
+              "disabled": false,
+              "key": "s",
+              "value": "<string>",
+              "description": "Sort spec"
+            },
+            {
+              "disabled": false,
+              "key": "o",
+              "value": "<string>",
+              "description": "Pagination options"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "b99d06c4-2296-483d-8e3a-7ee53ede9713",
+          "name": "Patent records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patentsview",
+                "patents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "f",
+                  "value": "<string>"
+                },
+                {
+                  "key": "s",
+                  "value": "<string>"
+                },
+                {
+                  "key": "o",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-API-KEY",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n  \"count\": 6195,\n  \"total_patent_count\": 4913,\n  \"patents\": [\n    {\n      \"patent_number\": \"string\",\n      \"patent_title\": \"string\",\n      \"patent_date\": \"1981-07-04\",\n      \"patent_type\": \"string\",\n      \"inventors\": [\n        {\n          \"inventor_id\": \"string\",\n          \"inventor_first_name\": \"string\",\n          \"inventor_last_name\": \"string\"\n        },\n        {\n          \"inventor_id\": \"string\",\n          \"inventor_first_name\": \"string\",\n          \"inventor_last_name\": \"string\"\n        }\n      ],\n      \"assignees\": [\n        {\n          \"assignee_id\": \"string\",\n          \"assignee_organization\": \"string\"\n        },\n        {\n          \"assignee_id\": \"string\",\n          \"assignee_organization\": \"string\"\n        }\n      ]\n    },\n    {\n      \"patent_number\": \"string\",\n      \"patent_title\": \"string\",\n      \"patent_date\": \"1982-09-25\",\n      \"patent_type\": \"string\",\n      \"inventors\": [\n        {\n          \"inventor_id\": \"string\",\n          \"inventor_first_name\": \"string\",\n          \"inventor_last_name\": \"string\"\n        },\n        {\n          \"inventor_id\": \"string\",\n          \"inventor_first_name\": \"string\",\n          \"inventor_last_name\": \"string\"\n        }\n      ],\n      \"assignees\": [\n        {\n          \"assignee_id\": \"string\",\n          \"assignee_organization\": \"string\"\n        },\n        {\n          \"assignee_id\": \"string\",\n          \"assignee_organization\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "a237cc16-222c-4b01-8233-2f0a005adb3b",
+      "name": "Query Inventors",
+      "request": {
+        "name": "Query Inventors",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "v1",
+            "patentsview",
+            "inventors"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "f",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "o",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "8c53e4f6-6c7d-4405-a0f0-4d2e6163825b",
+          "name": "Inventor records (with disambiguation IDs)",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patentsview",
+                "inventors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "f",
+                  "value": "<string>"
+                },
+                {
+                  "key": "o",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-API-KEY",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "5fb580fa-ed3e-416e-83ed-f298d2f3d43a",
+      "name": "Query Assignees",
+      "request": {
+        "name": "Query Assignees",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "v1",
+            "patentsview",
+            "assignees"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "f",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "o",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "0ed271c5-4c02-4274-b9f5-a8df114e4566",
+          "name": "Assignee records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patentsview",
+                "assignees"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "f",
+                  "value": "<string>"
+                },
+                {
+                  "key": "o",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-API-KEY",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "b979472b-c6cb-4b5f-9189-69acadb8b708",
+      "name": "Query Locations",
+      "request": {
+        "name": "Query Locations",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "v1",
+            "patentsview",
+            "locations"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "f",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "c28d875e-7430-4adc-969f-f5a327ac3613",
+          "name": "Location records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patentsview",
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "f",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-API-KEY",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "83dac413-82ca-42fa-af78-41ff98d2ccc7",
+      "name": "Query CPC Subsections",
+      "request": {
+        "name": "Query CPC Subsections",
+        "description": {},
+        "url": {
+          "path": [
+            "api",
+            "v1",
+            "patentsview",
+            "cpc_subsections"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [
+            {
+              "disabled": false,
+              "key": "q",
+              "value": "<string>"
+            },
+            {
+              "disabled": false,
+              "key": "f",
+              "value": "<string>"
+            }
+          ],
+          "variable": []
+        },
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "method": "GET",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "1e843317-4ce4-43c5-9e35-9ebc89cbec73",
+          "name": "CPC subsection records",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patentsview",
+                "cpc_subsections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "key": "f",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "X-API-KEY",
+                "value": "<API Key>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{}",
+          "cookie": [],
+          "_postman_previewlanguage": "json"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "bef8c632-c495-4531-a9bb-d5d14e20c4fb",
+    "name": "USPTO PatentsView API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO research-focused patent data API with inventor disambiguation, assignee, location,\nCPC/USPC classification, and citation endpoints. Original endpoints at PatentsView.org;\nmigrated to the USPTO Open Data Portal (data.uspto.gov) on March 20, 2026. Clients should\nuse an ODP API key going forward.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

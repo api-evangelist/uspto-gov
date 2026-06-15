@@ -1,0 +1,1125 @@
+{
+  "item": [
+    {
+      "id": "405ffb60-02f3-4a2c-9470-8a1af2a80756",
+      "name": "Status",
+      "description": {
+        "content": "Trademark case status",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60dc015d-71d4-45db-9247-db5854e2390b",
+          "name": "Get Case Status By Serial Number XML",
+          "request": {
+            "name": "Get Case Status By Serial Number XML",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "sn{{serialNumber}}",
+                "info.xml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "19719807-cd2f-4a14-840e-f7407c11296e",
+              "name": "Case status in ST.66 XML",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "sn{{serialNumber}}",
+                    "info.xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe496156-515a-4e90-be3c-77e90ba235c4",
+          "name": "Get Case Status By Serial Number JSON",
+          "request": {
+            "name": "Get Case Status By Serial Number JSON",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "sn{{serialNumber}}",
+                "info.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58db8f52-ddf3-461c-88cf-0155e41cddab",
+              "name": "Case status JSON",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "sn{{serialNumber}}",
+                    "info.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"serialNumber\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"markIdentification\": \"string\",\n  \"statusCode\": \"string\",\n  \"statusDescription\": \"string\",\n  \"statusDate\": \"1946-10-22\",\n  \"filingDate\": \"1959-02-16\",\n  \"registrationDate\": \"2007-09-04\",\n  \"applicationFilingBasis\": \"string\",\n  \"owners\": [\n    {\n      \"partyName\": \"string\",\n      \"partyType\": \"string\",\n      \"addressLine\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\",\n      \"countryCode\": \"string\",\n      \"legalEntityType\": \"string\"\n    },\n    {\n      \"partyName\": \"string\",\n      \"partyType\": \"string\",\n      \"addressLine\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\",\n      \"countryCode\": \"string\",\n      \"legalEntityType\": \"string\"\n    }\n  ],\n  \"goodsServices\": [\n    {\n      \"internationalClass\": \"string\",\n      \"usClass\": \"string\",\n      \"goodsServicesText\": \"string\"\n    },\n    {\n      \"internationalClass\": \"string\",\n      \"usClass\": \"string\",\n      \"goodsServicesText\": \"string\"\n    }\n  ],\n  \"prosecutionHistory\": [\n    {\n      \"eventCode\": \"string\",\n      \"eventDescription\": \"string\",\n      \"eventDate\": \"1983-05-05\"\n    },\n    {\n      \"eventCode\": \"string\",\n      \"eventDescription\": \"string\",\n      \"eventDate\": \"1970-05-11\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0413cebb-6e5e-40ac-88c1-939018558100",
+          "name": "Get Case Status By Registration Number XML",
+          "request": {
+            "name": "Get Case Status By Registration Number XML",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "rn{{registrationNumber}}",
+                "info.xml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a3305a9d-2b92-4a69-a081-47845e068e86",
+              "name": "ST.66 XML",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "rn{{registrationNumber}}",
+                    "info.xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76e640ff-c5bd-4190-a73a-2006f5a8e11f",
+          "name": "Get Case Status By Registration Number JSON",
+          "request": {
+            "name": "Get Case Status By Registration Number JSON",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "rn{{registrationNumber}}",
+                "info.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4279bb55-3180-4d18-80b2-f8f678c577f6",
+              "name": "Case status JSON",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "rn{{registrationNumber}}",
+                    "info.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"serialNumber\": \"string\",\n  \"registrationNumber\": \"string\",\n  \"markIdentification\": \"string\",\n  \"statusCode\": \"string\",\n  \"statusDescription\": \"string\",\n  \"statusDate\": \"2024-03-20\",\n  \"filingDate\": \"1948-09-20\",\n  \"registrationDate\": \"1977-06-03\",\n  \"applicationFilingBasis\": \"string\",\n  \"owners\": [\n    {\n      \"partyName\": \"string\",\n      \"partyType\": \"string\",\n      \"addressLine\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\",\n      \"countryCode\": \"string\",\n      \"legalEntityType\": \"string\"\n    },\n    {\n      \"partyName\": \"string\",\n      \"partyType\": \"string\",\n      \"addressLine\": \"string\",\n      \"cityName\": \"string\",\n      \"geographicRegionName\": \"string\",\n      \"countryCode\": \"string\",\n      \"legalEntityType\": \"string\"\n    }\n  ],\n  \"goodsServices\": [\n    {\n      \"internationalClass\": \"string\",\n      \"usClass\": \"string\",\n      \"goodsServicesText\": \"string\"\n    },\n    {\n      \"internationalClass\": \"string\",\n      \"usClass\": \"string\",\n      \"goodsServicesText\": \"string\"\n    }\n  ],\n  \"prosecutionHistory\": [\n    {\n      \"eventCode\": \"string\",\n      \"eventDescription\": \"string\",\n      \"eventDate\": \"1990-01-30\"\n    },\n    {\n      \"eventCode\": \"string\",\n      \"eventDescription\": \"string\",\n      \"eventDate\": \"1952-10-21\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a8642211-258c-4e6a-8112-d422d18773d2",
+          "name": "Get Case Status By Reference Number XML",
+          "request": {
+            "name": "Get Case Status By Reference Number XML",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "rf{{referenceNumber}}",
+                "info.xml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a5399588-c304-456f-8080-ed40f87037a2",
+              "name": "ST.66 XML",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "rf{{referenceNumber}}",
+                    "info.xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f9a7a90-cc36-4952-82d1-8012404dcd4b",
+          "name": "Get Case Status By International Registration Number XML",
+          "request": {
+            "name": "Get Case Status By International Registration Number XML",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "ir{{internationalRegistrationNumber}}",
+                "info.xml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b92b91a-8873-4a74-8827-d799463171a9",
+              "name": "ST.66 XML",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "ir{{internationalRegistrationNumber}}",
+                    "info.xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad224564-00c0-4932-9bae-62f08d2fc788",
+          "name": "Get Case Status ST.96 By Serial Number",
+          "request": {
+            "name": "Get Case Status ST.96 By Serial Number",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casestatus",
+                "sn{{serialNumber}}",
+                "info.st96.xml"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5dfa5711-0cd6-40db-b8bd-144d4b65eff2",
+              "name": "ST.96 XML",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casestatus",
+                    "sn{{serialNumber}}",
+                    "info.st96.xml"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/xml"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/xml"
+                }
+              ],
+              "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<element>(string)</element>",
+              "cookie": [],
+              "_postman_previewlanguage": "xml"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ae29fd2e-194b-4e65-b039-eb041fc9b5c1",
+      "name": "Documents",
+      "description": {
+        "content": "Trademark documents and images",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e9016159-0566-4daf-967a-1bc9c4a9d19e",
+          "name": "Get Case Documents PDF Bundle",
+          "request": {
+            "name": "Get Case Documents PDF Bundle",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casedocs",
+                "bundle.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sn",
+                  "value": "<string>",
+                  "description": "Serial number"
+                },
+                {
+                  "disabled": false,
+                  "key": "rn",
+                  "value": "<string>",
+                  "description": "Registration number"
+                },
+                {
+                  "disabled": false,
+                  "key": "rf",
+                  "value": "<string>",
+                  "description": "Reference number"
+                },
+                {
+                  "disabled": false,
+                  "key": "ir",
+                  "value": "<string>",
+                  "description": "International registration number"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "017360c3-8fe3-47d3-a058-c90ef86ad0ff",
+              "name": "PDF bundle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casedocs",
+                    "bundle.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ir",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8e0f7b6-8f5e-49df-b25f-55b378633420",
+          "name": "Get Case Documents ZIP Bundle",
+          "request": {
+            "name": "Get Case Documents ZIP Bundle",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casedocs",
+                "bundle.zip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sn",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rn",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rf",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ir",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56ad5bfa-684e-4378-990b-b7d2fe19a6d3",
+              "name": "ZIP bundle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casedocs",
+                    "bundle.zip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ir",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68b526c5-d4a1-4068-8a9a-8e1382c8516b",
+          "name": "Get Single Case Document PDF",
+          "request": {
+            "name": "Get Single Case Document PDF",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casedocs",
+                ":sn",
+                "{{documentIdentifier}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sn",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7a3a066b-63b6-465f-8240-508438a7c757",
+              "name": "PDF binary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casedocs",
+                    ":sn",
+                    "{{documentIdentifier}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sn",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ebf6925e-6546-4635-9870-e889bae0d8d5",
+          "name": "Get Mark Image",
+          "request": {
+            "name": "Get Mark Image",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "rgbimg",
+                "sn{{serialNumber}}",
+                "{{imageType}}.jpg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/jpeg"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07a8e0b7-3bf2-4555-882a-ba17c90fba7a",
+              "name": "JPEG",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "rgbimg",
+                    "sn{{serialNumber}}",
+                    "{{imageType}}.jpg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "USPTO-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "image/jpeg"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/jpeg"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://tsdrapi.uspto.gov",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "documentIdentifier"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "serialNumber"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "imageType"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "registrationNumber"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "referenceNumber"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "internationalRegistrationNumber"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "USPTO-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a291b345-4ccf-48b6-a2b4-bcfc90883ca4",
+    "name": "USPTO Trademark Status and Document Retrieval (TSDR) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Programmatic access to U.S. trademark case status, file wrapper documents, and images.\nTSDR exposes status and document endpoints by serial number, registration number, reference\nnumber, or international registration number. Status responses are available in ST.66 XML,\nST.96 XML, and JSON. Document and image bundles are delivered as PDFs and ZIPs.\nRate limits: 60 requests/min/key for status; 4 requests/min/key for PDF/ZIP downloads.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

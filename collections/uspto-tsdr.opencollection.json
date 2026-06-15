@@ -1,0 +1,276 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Trademark Status and Document Retrieval (TSDR) API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "USPTO-API-KEY",
+      "value": "{{USPTO-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Status",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Case Status By Serial Number XML",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/sn:serialNumber/info.xml",
+            "params": [
+              {
+                "name": "serialNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status By Serial Number XML"
+        },
+        {
+          "info": {
+            "name": "Get Case Status By Serial Number JSON",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/sn:serialNumber/info.json",
+            "params": [
+              {
+                "name": "serialNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status By Serial Number JSON"
+        },
+        {
+          "info": {
+            "name": "Get Case Status By Registration Number XML",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/rn:registrationNumber/info.xml",
+            "params": [
+              {
+                "name": "registrationNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status By Registration Number XML"
+        },
+        {
+          "info": {
+            "name": "Get Case Status By Registration Number JSON",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/rn:registrationNumber/info.json",
+            "params": [
+              {
+                "name": "registrationNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status By Registration Number JSON"
+        },
+        {
+          "info": {
+            "name": "Get Case Status By Reference Number XML",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/rf:referenceNumber/info.xml",
+            "params": [
+              {
+                "name": "referenceNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status By Reference Number XML"
+        },
+        {
+          "info": {
+            "name": "Get Case Status By International Registration Number XML",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/ir:internationalRegistrationNumber/info.xml",
+            "params": [
+              {
+                "name": "internationalRegistrationNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status By International Registration Number XML"
+        },
+        {
+          "info": {
+            "name": "Get Case Status ST.96 By Serial Number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casestatus/sn:serialNumber/info.st96.xml",
+            "params": [
+              {
+                "name": "serialNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Case Status ST.96 By Serial Number"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Case Documents PDF Bundle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casedocs/bundle.pdf",
+            "params": [
+              {
+                "name": "sn",
+                "value": "",
+                "type": "query",
+                "description": "Serial number"
+              },
+              {
+                "name": "rn",
+                "value": "",
+                "type": "query",
+                "description": "Registration number"
+              },
+              {
+                "name": "rf",
+                "value": "",
+                "type": "query",
+                "description": "Reference number"
+              },
+              {
+                "name": "ir",
+                "value": "",
+                "type": "query",
+                "description": "International registration number"
+              }
+            ]
+          },
+          "docs": "Get Case Documents PDF Bundle"
+        },
+        {
+          "info": {
+            "name": "Get Case Documents ZIP Bundle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casedocs/bundle.zip",
+            "params": [
+              {
+                "name": "sn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rf",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ir",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Case Documents ZIP Bundle"
+        },
+        {
+          "info": {
+            "name": "Get Single Case Document PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/casedocs/:sn/:documentIdentifier.pdf",
+            "params": [
+              {
+                "name": "sn",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Single Case Document PDF"
+        },
+        {
+          "info": {
+            "name": "Get Mark Image",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://tsdrapi.uspto.gov/ts/cd/rgbimg/sn:serialNumber/:imageType.jpg",
+            "params": [
+              {
+                "name": "serialNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imageType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Mark Image"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

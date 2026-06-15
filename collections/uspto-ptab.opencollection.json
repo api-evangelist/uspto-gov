@@ -1,0 +1,317 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Patent Trial and Appeal Board (PTAB) API",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Proceedings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Proceedings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/proceedings/search",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "proceedingTypeCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "proceedingFilingDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "proceedingFilingDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "subProceedingTypeCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Proceedings"
+        },
+        {
+          "info": {
+            "name": "Get Proceeding",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/proceedings/:proceedingNumber",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Proceeding"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Decisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Decisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/decisions/search",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionTypeCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Decisions"
+        },
+        {
+          "info": {
+            "name": "Get Decision",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/decisions/:decisionIdentifier",
+            "params": [
+              {
+                "name": "decisionIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Decision"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/documents/search",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Documents"
+        },
+        {
+          "info": {
+            "name": "Get Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/documents/:documentIdentifier",
+            "params": [
+              {
+                "name": "documentIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Document"
+        },
+        {
+          "info": {
+            "name": "Download Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/documents/:documentIdentifier/download",
+            "params": [
+              {
+                "name": "documentIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download Document"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Appeals",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Appeal Decisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/appeals/search",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Appeal Decisions"
+        },
+        {
+          "info": {
+            "name": "Search Interference Decisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/interferences/search",
+            "params": [
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Interference Decisions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

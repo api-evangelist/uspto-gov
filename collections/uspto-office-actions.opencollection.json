@@ -1,0 +1,243 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Office Action APIs",
+    "version": "3.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Office Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Office Action Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/text/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mailDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mailDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Office Action Text"
+        },
+        {
+          "info": {
+            "name": "Get Office Action Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/text/:officeActionIdentifier",
+            "params": [
+              {
+                "name": "officeActionIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Office Action Text"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Citations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Office Action Citations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/citations/search",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "citedPatentNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Office Action Citations"
+        },
+        {
+          "info": {
+            "name": "Get Office Action Citation Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/citations/fields"
+          },
+          "docs": "Get Office Action Citation Fields"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rejections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Office Action Rejections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/rejections/search",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rejectionBasisCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Office Action Rejections"
+        },
+        {
+          "info": {
+            "name": "Get Office Action Rejection Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/rejections/fields"
+          },
+          "docs": "Get Office Action Rejection Fields"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Enriched Citations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Enriched Citations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/enriched-citations/search",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "citedPatentNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Enriched Citations"
+        },
+        {
+          "info": {
+            "name": "Get Enriched Citation Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/enriched-citations/fields"
+          },
+          "docs": "Get Enriched Citation Fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

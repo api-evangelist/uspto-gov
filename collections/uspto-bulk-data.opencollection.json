@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search Bulk Products",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/datasets/products/search",
+        "params": [
+          {
+            "name": "q",
+            "value": "",
+            "type": "query",
+            "description": "Free-text query"
+          },
+          {
+            "name": "productIdentifier",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "categoryCode",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "fromDate",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "toDate",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "offset",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "limit",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Search Bulk Products"
+    },
+    {
+      "info": {
+        "name": "Get Bulk Product",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/datasets/products/:productIdentifier",
+        "params": [
+          {
+            "name": "productIdentifier",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "fromDate",
+            "value": "",
+            "type": "query"
+          },
+          {
+            "name": "toDate",
+            "value": "",
+            "type": "query"
+          }
+        ]
+      },
+      "docs": "Get Bulk Product"
+    },
+    {
+      "info": {
+        "name": "Download Bulk Product File",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.uspto.gov/api/v1/datasets/products/:productIdentifier/files/:fileName",
+        "params": [
+          {
+            "name": "productIdentifier",
+            "value": "",
+            "type": "path"
+          },
+          {
+            "name": "fileName",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Download Bulk Product File"
+    }
+  ],
+  "bundled": true
+}
