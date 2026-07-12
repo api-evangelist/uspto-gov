@@ -173,6 +173,10 @@ kind: government
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
+  - type: DomainSecurity
+    url: security/uspto-gov-domain-security.yml
+  - type: Authentication
+    url: authentication/uspto-gov-authentication.yml
   - type: Website
     url: https://www.uspto.gov/
   - type: Portal
@@ -225,6 +229,8 @@ common:
     url: vocabulary/uspto-gov-vocabulary.yml
   - type: RateLimits
     url: rate-limits/uspto-gov-rate-limits.yml
+  - url: https://www.uspto.gov/rss.xml
+    type: Blog
 created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.20'

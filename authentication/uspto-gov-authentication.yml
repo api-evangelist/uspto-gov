@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/uspto-bulk-data-openapi.yml, openapi/uspto-office-actions-openapi.yml, openapi/uspto-patent-file-wrapper-openapi.yml,
+  openapi/uspto-patentsview-openapi.yml, openapi/uspto-ptab-openapi.yml, openapi/uspto-tsdr-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-API-KEY
+  sources:
+  - openapi/uspto-bulk-data-openapi.yml
+  - openapi/uspto-office-actions-openapi.yml
+  - openapi/uspto-patent-file-wrapper-openapi.yml
+  - openapi/uspto-patentsview-openapi.yml
+  - openapi/uspto-ptab-openapi.yml
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: USPTO-API-KEY
+  sources:
+  - openapi/uspto-tsdr-openapi.yml
