@@ -173,6 +173,8 @@ kind: government
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 common:
+  - type: AgenticAccess
+    url: agentic-access/uspto-gov-agentic-access.yml
   - type: DomainSecurity
     url: security/uspto-gov-domain-security.yml
   - type: Authentication
