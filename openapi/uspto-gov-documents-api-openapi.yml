@@ -1,0 +1,333 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) Appeals Documents API
+  version: '1.0'
+  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+
+    '
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Documents
+  description: Retrieve patent application documents
+paths:
+  /api/v1/patent/applications/{applicationNumberText}/documents:
+    get:
+      tags:
+      - Documents
+      summary: List Application Documents
+      operationId: listApplicationDocuments
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of documents in the file wrapper.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Document'
+  /api/v1/download/applications/{applicationNumberText}/{documentId}.pdf:
+    get:
+      tags:
+      - Documents
+      summary: Download Application Document PDF
+      operationId: downloadApplicationDocumentPdf
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: documentId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: PDF binary.
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+  /api/v1/ptab/documents/search:
+    get:
+      tags:
+      - Documents
+      summary: Search Documents
+      operationId: searchPtabDocuments
+      parameters:
+      - name: proceedingNumber
+        in: query
+        schema:
+          type: string
+      - name: documentCategory
+        in: query
+        schema:
+          type: string
+      - name: filingDateFrom
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: filingDateTo
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: offset
+        in: query
+        schema:
+          type: integer
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 25
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentSearchResponse'
+  /api/v1/ptab/documents/{documentIdentifier}:
+    get:
+      tags:
+      - Documents
+      summary: Get Document
+      operationId: getPtabDocument
+      parameters:
+      - name: documentIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Document metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Document_2'
+  /api/v1/ptab/documents/{documentIdentifier}/download:
+    get:
+      tags:
+      - Documents
+      summary: Download Document
+      operationId: downloadPtabDocument
+      parameters:
+      - name: documentIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: PDF binary
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+  /ts/cd/casedocs/bundle.pdf:
+    get:
+      tags:
+      - Documents
+      summary: Get Case Documents PDF Bundle
+      operationId: getCaseDocumentsPdfBundle
+      parameters:
+      - name: sn
+        in: query
+        schema:
+          type: string
+        description: Serial number
+      - name: rn
+        in: query
+        schema:
+          type: string
+        description: Registration number
+      - name: rf
+        in: query
+        schema:
+          type: string
+        description: Reference number
+      - name: ir
+        in: query
+        schema:
+          type: string
+        description: International registration number
+      responses:
+        '200':
+          description: PDF bundle
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+  /ts/cd/casedocs/bundle.zip:
+    get:
+      tags:
+      - Documents
+      summary: Get Case Documents ZIP Bundle
+      operationId: getCaseDocumentsZipBundle
+      parameters:
+      - name: sn
+        in: query
+        schema:
+          type: string
+      - name: rn
+        in: query
+        schema:
+          type: string
+      - name: rf
+        in: query
+        schema:
+          type: string
+      - name: ir
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ZIP bundle
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+  /ts/cd/casedocs/{sn}/{documentIdentifier}.pdf:
+    get:
+      tags:
+      - Documents
+      summary: Get Single Case Document PDF
+      operationId: getCaseDocumentPdf
+      parameters:
+      - name: sn
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: documentIdentifier
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: PDF binary
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+  /ts/cd/rgbimg/sn{serialNumber}/{imageType}.jpg:
+    get:
+      tags:
+      - Documents
+      summary: Get Mark Image
+      operationId: getMarkImage
+      parameters:
+      - name: serialNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: imageType
+        in: path
+        required: true
+        schema:
+          type: string
+          enum:
+          - drawing
+          - specimen
+      responses:
+        '200':
+          description: JPEG
+          content:
+            image/jpeg:
+              schema:
+                type: string
+                format: binary
+components:
+  schemas:
+    Document_2:
+      type: object
+      properties:
+        documentIdentifier:
+          type: string
+        proceedingNumber:
+          type: string
+        documentTitleText:
+          type: string
+        documentCategory:
+          type: string
+        filingDate:
+          type: string
+          format: date
+        filingPartyCategory:
+          type: string
+        pageQuantity:
+          type: integer
+        downloadUrl:
+          type: string
+          format: uri
+    DocumentSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document_2'
+    Document:
+      type: object
+      properties:
+        documentIdentifier:
+          type: string
+        documentCode:
+          type: string
+        documentCodeDescriptionText:
+          type: string
+        officialDate:
+          type: string
+          format: date
+        pageTotalQuantity:
+          type: integer
+        directionCategory:
+          type: string
+        downloadOptionBag:
+          type: array
+          items:
+            type: object
+            properties:
+              mimeTypeIdentifier:
+                type: string
+              downloadUrl:
+                type: string
+                format: uri
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

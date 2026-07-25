@@ -1,0 +1,238 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) Appeals Application API
+  version: '1.0'
+  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+
+    '
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Application
+  description: Retrieve patent application data
+paths:
+  /api/v1/patent/applications/{applicationNumberText}:
+    get:
+      tags:
+      - Application
+      summary: Get Patent Application
+      operationId: getPatentApplication
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Patent application file wrapper.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatentApplication'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /api/v1/patent/applications/{applicationNumberText}/meta-data:
+    get:
+      tags:
+      - Application
+      summary: Get Patent Application Metadata
+      operationId: getPatentApplicationMetadata
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Application metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatentApplication'
+  /api/v1/patent/applications/{applicationNumberText}/adjustment:
+    get:
+      tags:
+      - Application
+      summary: Get Patent Term Adjustment
+      operationId: getPatentTermAdjustment
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Patent term adjustment data.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/patent/applications/{applicationNumberText}/attorney:
+    get:
+      tags:
+      - Application
+      summary: Get Application Attorney/Agent
+      operationId: getApplicationAttorney
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Attorney/agent information.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/patent/applications/{applicationNumberText}/continuity:
+    get:
+      tags:
+      - Application
+      summary: Get Application Continuity
+      operationId: getApplicationContinuity
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Parent/child continuity relationships.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/patent/applications/{applicationNumberText}/foreign-priority:
+    get:
+      tags:
+      - Application
+      summary: Get Application Foreign Priority
+      operationId: getApplicationForeignPriority
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Foreign priority claims.
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/patent/applications/{applicationNumberText}/transactions:
+    get:
+      tags:
+      - Application
+      summary: Get Application Transactions
+      operationId: getApplicationTransactions
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Prosecution transaction history.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    Party:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nameLineOneText:
+          type: string
+        country:
+          type: string
+        cityName:
+          type: string
+        geographicRegionName:
+          type: string
+    PatentApplication:
+      type: object
+      properties:
+        applicationNumberText:
+          type: string
+        patentNumber:
+          type: string
+        filingDate:
+          type: string
+          format: date
+        grantDate:
+          type: string
+          format: date
+        publicationDate:
+          type: string
+          format: date
+        publicationNumber:
+          type: string
+        applicationTypeCategory:
+          type: string
+        applicationStatusCode:
+          type: string
+        applicationStatusDescriptionText:
+          type: string
+        applicationStatusDate:
+          type: string
+          format: date
+        inventionTitle:
+          type: string
+        firstInventorToFileIndicator:
+          type: string
+        examinerNameText:
+          type: string
+        groupArtUnitNumber:
+          type: string
+        classSubclass:
+          type: string
+        cpcClassificationBag:
+          type: array
+          items:
+            type: string
+        applicantBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+        inventorBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+        correspondenceAddressBag:
+          type: array
+          items:
+            type: object
+  responses:
+    NotFound:
+      description: Resource not found.
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

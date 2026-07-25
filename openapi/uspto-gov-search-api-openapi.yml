@@ -1,0 +1,204 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) Appeals Search API
+  version: '1.0'
+  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+
+    '
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Search
+  description: Search patent applications
+paths:
+  /api/v1/patent/applications/search:
+    get:
+      tags:
+      - Search
+      summary: Search Patent Applications
+      operationId: searchPatentApplications
+      parameters:
+      - name: q
+        in: query
+        description: Search query (Lucene-style).
+        schema:
+          type: string
+      - name: applicationNumberText
+        in: query
+        schema:
+          type: string
+      - name: patentNumber
+        in: query
+        schema:
+          type: string
+      - name: filingDateFrom
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: filingDateTo
+        in: query
+        schema:
+          type: string
+          format: date
+      - name: offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          default: 25
+          maximum: 100
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatentApplicationSearchResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/RateLimited'
+    post:
+      tags:
+      - Search
+      summary: Search Patent Applications With Body
+      operationId: searchPatentApplicationsPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatentSearchRequest'
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatentApplicationSearchResponse'
+components:
+  responses:
+    Unauthorized:
+      description: Missing or invalid API key.
+    RateLimited:
+      description: Rate limit exceeded.
+  schemas:
+    PatentApplicationSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        patentBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/PatentApplication'
+    Party:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nameLineOneText:
+          type: string
+        country:
+          type: string
+        cityName:
+          type: string
+        geographicRegionName:
+          type: string
+    PatentSearchRequest:
+      type: object
+      properties:
+        q:
+          type: string
+        filters:
+          type: object
+          additionalProperties: true
+        sort:
+          type: array
+          items:
+            type: string
+        offset:
+          type: integer
+        limit:
+          type: integer
+    PatentApplication:
+      type: object
+      properties:
+        applicationNumberText:
+          type: string
+        patentNumber:
+          type: string
+        filingDate:
+          type: string
+          format: date
+        grantDate:
+          type: string
+          format: date
+        publicationDate:
+          type: string
+          format: date
+        publicationNumber:
+          type: string
+        applicationTypeCategory:
+          type: string
+        applicationStatusCode:
+          type: string
+        applicationStatusDescriptionText:
+          type: string
+        applicationStatusDate:
+          type: string
+          format: date
+        inventionTitle:
+          type: string
+        firstInventorToFileIndicator:
+          type: string
+        examinerNameText:
+          type: string
+        groupArtUnitNumber:
+          type: string
+        classSubclass:
+          type: string
+        cpcClassificationBag:
+          type: array
+          items:
+            type: string
+        applicantBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+        inventorBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+        correspondenceAddressBag:
+          type: array
+          items:
+            type: object
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

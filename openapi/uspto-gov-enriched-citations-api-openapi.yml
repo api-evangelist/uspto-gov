@@ -1,0 +1,73 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) Appeals Enriched Citations API
+  version: '1.0'
+  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+
+    '
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Enriched Citations
+paths:
+  /api/v1/oa/enriched-citations/search:
+    get:
+      tags:
+      - Enriched Citations
+      summary: Search Enriched Citations
+      operationId: searchEnrichedCitations
+      parameters:
+      - name: applicationNumberText
+        in: query
+        schema:
+          type: string
+      - name: citedPatentNumber
+        in: query
+        schema:
+          type: string
+      - name: offset
+        in: query
+        schema:
+          type: integer
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Enriched citation results
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/oa/enriched-citations/fields:
+    get:
+      tags:
+      - Enriched Citations
+      summary: Get Enriched Citation Fields
+      operationId: getEnrichedCitationFields
+      responses:
+        '200':
+          description: Field metadata
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

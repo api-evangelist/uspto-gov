@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) Appeals Assignments API
+  version: '1.0'
+  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+
+    '
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Assignments
+  description: Retrieve assignment records
+paths:
+  /api/v1/patent/applications/{applicationNumberText}/assignment:
+    get:
+      tags:
+      - Assignments
+      summary: Get Patent Assignments
+      operationId: getPatentAssignments
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Assignment history for the application.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Assignment'
+components:
+  schemas:
+    Party:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nameLineOneText:
+          type: string
+        country:
+          type: string
+        cityName:
+          type: string
+        geographicRegionName:
+          type: string
+    Assignment:
+      type: object
+      properties:
+        reelNumber:
+          type: string
+        frameNumber:
+          type: string
+        recordedDate:
+          type: string
+          format: date
+        executionDate:
+          type: string
+          format: date
+        conveyanceText:
+          type: string
+        assignorBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+        assigneeBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/Party'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

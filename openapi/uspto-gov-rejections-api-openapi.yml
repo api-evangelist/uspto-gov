@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: USPTO Bulk Data Storage System (BDSS) Appeals Rejections API
+  version: '1.0'
+  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+
+    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+
+    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+
+    '
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Rejections
+paths:
+  /api/v1/oa/rejections/search:
+    get:
+      tags:
+      - Rejections
+      summary: Search Office Action Rejections
+      operationId: searchOfficeActionRejections
+      parameters:
+      - name: applicationNumberText
+        in: query
+        schema:
+          type: string
+      - name: rejectionBasisCategory
+        in: query
+        schema:
+          type: string
+          enum:
+          - '101'
+          - '102'
+          - '103'
+          - '112'
+      - name: offset
+        in: query
+        schema:
+          type: integer
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Rejection results
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/oa/rejections/fields:
+    get:
+      tags:
+      - Rejections
+      summary: Get Office Action Rejection Fields
+      operationId: getOfficeActionRejectionFields
+      responses:
+        '200':
+          description: Field metadata
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
