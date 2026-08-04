@@ -1,0 +1,183 @@
+openapi: 3.0.3
+info:
+  title: USPTO Trademark Status and Document Retrieval (TSDR) API
+  version: '1.0'
+  description: |
+    Programmatic access to U.S. trademark case status, file wrapper documents, and images.
+    TSDR exposes status and document endpoints by serial number, registration number, reference
+    number, or international registration number. Status responses are available in ST.66 XML,
+    ST.96 XML, and JSON. Document and image bundles are delivered as PDFs and ZIPs.
+    Rate limits: 60 requests/min/key for status; 4 requests/min/key for PDF/ZIP downloads.
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+servers:
+- url: https://tsdrapi.uspto.gov
+  description: USPTO TSDR API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Status
+  description: Trademark case status
+- name: Documents
+  description: Trademark documents and images
+paths:
+  /ts/cd/casestatus/sn{serialNumber}/info.xml:
+    get:
+      tags: [Status]
+      summary: Get Case Status By Serial Number XML
+      operationId: getCaseStatusBySerialNumberXml
+      parameters:
+      - {name: serialNumber, in: path, required: true, schema: {type: string, pattern: '^[0-9]{8}$'}}
+      responses:
+        '200': {description: Case status in ST.66 XML, content: {application/xml: {schema: {type: string}}}}
+  /ts/cd/casestatus/sn{serialNumber}/info.json:
+    get:
+      tags: [Status]
+      summary: Get Case Status By Serial Number JSON
+      operationId: getCaseStatusBySerialNumberJson
+      parameters:
+      - {name: serialNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Case status JSON
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/TrademarkCase'}
+  /ts/cd/casestatus/rn{registrationNumber}/info.xml:
+    get:
+      tags: [Status]
+      summary: Get Case Status By Registration Number XML
+      operationId: getCaseStatusByRegistrationNumberXml
+      parameters:
+      - {name: registrationNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: ST.66 XML, content: {application/xml: {schema: {type: string}}}}
+  /ts/cd/casestatus/rn{registrationNumber}/info.json:
+    get:
+      tags: [Status]
+      summary: Get Case Status By Registration Number JSON
+      operationId: getCaseStatusByRegistrationNumberJson
+      parameters:
+      - {name: registrationNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200':
+          description: Case status JSON
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/TrademarkCase'}
+  /ts/cd/casestatus/rf{referenceNumber}/info.xml:
+    get:
+      tags: [Status]
+      summary: Get Case Status By Reference Number XML
+      operationId: getCaseStatusByReferenceNumberXml
+      parameters:
+      - {name: referenceNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: ST.66 XML, content: {application/xml: {schema: {type: string}}}}
+  /ts/cd/casestatus/ir{internationalRegistrationNumber}/info.xml:
+    get:
+      tags: [Status]
+      summary: Get Case Status By International Registration Number XML
+      operationId: getCaseStatusByIrNumberXml
+      parameters:
+      - {name: internationalRegistrationNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: ST.66 XML, content: {application/xml: {schema: {type: string}}}}
+  /ts/cd/casestatus/sn{serialNumber}/info.st96.xml:
+    get:
+      tags: [Status]
+      summary: Get Case Status ST.96 By Serial Number
+      operationId: getCaseStatusBySerialNumberSt96
+      parameters:
+      - {name: serialNumber, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: ST.96 XML, content: {application/xml: {schema: {type: string}}}}
+  /ts/cd/casedocs/bundle.pdf:
+    get:
+      tags: [Documents]
+      summary: Get Case Documents PDF Bundle
+      operationId: getCaseDocumentsPdfBundle
+      parameters:
+      - {name: sn, in: query, schema: {type: string}, description: Serial number}
+      - {name: rn, in: query, schema: {type: string}, description: Registration number}
+      - {name: rf, in: query, schema: {type: string}, description: Reference number}
+      - {name: ir, in: query, schema: {type: string}, description: International registration number}
+      responses:
+        '200': {description: PDF bundle, content: {application/pdf: {schema: {type: string, format: binary}}}}
+  /ts/cd/casedocs/bundle.zip:
+    get:
+      tags: [Documents]
+      summary: Get Case Documents ZIP Bundle
+      operationId: getCaseDocumentsZipBundle
+      parameters:
+      - {name: sn, in: query, schema: {type: string}}
+      - {name: rn, in: query, schema: {type: string}}
+      - {name: rf, in: query, schema: {type: string}}
+      - {name: ir, in: query, schema: {type: string}}
+      responses:
+        '200': {description: ZIP bundle, content: {application/zip: {schema: {type: string, format: binary}}}}
+  /ts/cd/casedocs/{sn}/{documentIdentifier}.pdf:
+    get:
+      tags: [Documents]
+      summary: Get Single Case Document PDF
+      operationId: getCaseDocumentPdf
+      parameters:
+      - {name: sn, in: path, required: true, schema: {type: string}}
+      - {name: documentIdentifier, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: PDF binary, content: {application/pdf: {schema: {type: string, format: binary}}}}
+  /ts/cd/rgbimg/sn{serialNumber}/{imageType}.jpg:
+    get:
+      tags: [Documents]
+      summary: Get Mark Image
+      operationId: getMarkImage
+      parameters:
+      - {name: serialNumber, in: path, required: true, schema: {type: string}}
+      - {name: imageType, in: path, required: true, schema: {type: string, enum: [drawing, specimen]}}
+      responses:
+        '200': {description: JPEG, content: {image/jpeg: {schema: {type: string, format: binary}}}}
+components:
+  securitySchemes:
+    ApiKeyAuth: {type: apiKey, in: header, name: USPTO-API-KEY}
+  schemas:
+    TrademarkCase:
+      type: object
+      properties:
+        serialNumber: {type: string}
+        registrationNumber: {type: string}
+        markIdentification: {type: string}
+        statusCode: {type: string}
+        statusDescription: {type: string}
+        statusDate: {type: string, format: date}
+        filingDate: {type: string, format: date}
+        registrationDate: {type: string, format: date}
+        applicationFilingBasis: {type: string}
+        owners:
+          type: array
+          items:
+            type: object
+            properties:
+              partyName: {type: string}
+              partyType: {type: string}
+              addressLine: {type: string}
+              cityName: {type: string}
+              geographicRegionName: {type: string}
+              countryCode: {type: string}
+              legalEntityType: {type: string}
+        goodsServices:
+          type: array
+          items:
+            type: object
+            properties:
+              internationalClass: {type: string}
+              usClass: {type: string}
+              goodsServicesText: {type: string}
+        prosecutionHistory:
+          type: array
+          items:
+            type: object
+            properties:
+              eventCode: {type: string}
+              eventDescription: {type: string}
+              eventDate: {type: string, format: date}

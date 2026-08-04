@@ -1,0 +1,40 @@
+{
+  "provider": "uspto-gov",
+  "sources": [
+    "uspto-gov-appeals-api-openapi.yml",
+    "uspto-gov-application-api-openapi.yml",
+    "uspto-gov-assignments-api-openapi.yml",
+    "uspto-gov-citations-api-openapi.yml",
+    "uspto-gov-datasets-api-openapi.yml",
+    "uspto-gov-decisions-api-openapi.yml",
+    "uspto-gov-documents-api-openapi.yml",
+    "uspto-gov-enriched-citations-api-openapi.yml",
+    "uspto-gov-office-actions-api-openapi.yml",
+    "uspto-gov-patentsview-api-openapi.yml",
+    "uspto-gov-proceedings-api-openapi.yml",
+    "uspto-gov-rejections-api-openapi.yml",
+    "uspto-gov-search-api-openapi.yml",
+    "uspto-gov-status-api-openapi.yml"
+  ],
+  "outputs": [
+    "uspto-gov-appeals-api-openapi.yml",
+    "uspto-gov-application-api-openapi.yml",
+    "uspto-gov-assignments-api-openapi.yml",
+    "uspto-gov-citations-api-openapi.yml",
+    "uspto-gov-datasets-api-openapi.yml",
+    "uspto-gov-decisions-api-openapi.yml",
+    "uspto-gov-documents-api-openapi.yml",
+    "uspto-gov-enriched-citations-api-openapi.yml",
+    "uspto-gov-office-actions-api-openapi.yml",
+    "uspto-gov-patentsview-api-openapi.yml",
+    "uspto-gov-proceedings-api-openapi.yml",
+    "uspto-gov-rejections-api-openapi.yml",
+    "uspto-gov-search-api-openapi.yml",
+    "uspto-gov-status-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

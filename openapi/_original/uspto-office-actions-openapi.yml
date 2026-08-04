@@ -1,0 +1,127 @@
+openapi: 3.0.3
+info:
+  title: USPTO Office Action APIs
+  version: '3.0'
+  description: |
+    USPTO Office Action API family on the Open Data Portal — 8 endpoints covering Text Retrieval,
+    Citations, Rejections, and Enriched Citations. The Enriched Citation API uses machine-learning
+    information extraction and entity resolution to normalize patent and non-patent literature
+    citations against the application reference list.
+  contact: {name: USPTO API Help, email: APIhelp@uspto.gov}
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Office Actions
+- name: Citations
+- name: Rejections
+- name: Enriched Citations
+paths:
+  /api/v1/oa/text/search:
+    get:
+      tags: [Office Actions]
+      summary: Search Office Action Text
+      operationId: searchOfficeActionText
+      parameters:
+      - {name: q, in: query, schema: {type: string}}
+      - {name: applicationNumberText, in: query, schema: {type: string}}
+      - {name: mailDateFrom, in: query, schema: {type: string, format: date}}
+      - {name: mailDateTo, in: query, schema: {type: string, format: date}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200': {description: Search results, content: {application/json: {schema: {$ref: '#/components/schemas/OfficeActionTextSearchResponse'}}}}
+  /api/v1/oa/text/{officeActionIdentifier}:
+    get:
+      tags: [Office Actions]
+      summary: Get Office Action Text
+      operationId: getOfficeActionText
+      parameters:
+      - {name: officeActionIdentifier, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Office action text, content: {application/json: {schema: {$ref: '#/components/schemas/OfficeActionText'}}}}
+  /api/v1/oa/citations/search:
+    get:
+      tags: [Citations]
+      summary: Search Office Action Citations
+      operationId: searchOfficeActionCitations
+      parameters:
+      - {name: applicationNumberText, in: query, schema: {type: string}}
+      - {name: citedPatentNumber, in: query, schema: {type: string}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200': {description: Citation results, content: {application/json: {schema: {type: object}}}}
+  /api/v1/oa/citations/fields:
+    get:
+      tags: [Citations]
+      summary: Get Office Action Citation Fields
+      operationId: getOfficeActionCitationFields
+      responses:
+        '200': {description: Field metadata, content: {application/json: {schema: {type: object}}}}
+  /api/v1/oa/rejections/search:
+    get:
+      tags: [Rejections]
+      summary: Search Office Action Rejections
+      operationId: searchOfficeActionRejections
+      parameters:
+      - {name: applicationNumberText, in: query, schema: {type: string}}
+      - {name: rejectionBasisCategory, in: query, schema: {type: string, enum: ['101', '102', '103', '112']}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200': {description: Rejection results, content: {application/json: {schema: {type: object}}}}
+  /api/v1/oa/rejections/fields:
+    get:
+      tags: [Rejections]
+      summary: Get Office Action Rejection Fields
+      operationId: getOfficeActionRejectionFields
+      responses:
+        '200': {description: Field metadata, content: {application/json: {schema: {type: object}}}}
+  /api/v1/oa/enriched-citations/search:
+    get:
+      tags: [Enriched Citations]
+      summary: Search Enriched Citations
+      operationId: searchEnrichedCitations
+      parameters:
+      - {name: applicationNumberText, in: query, schema: {type: string}}
+      - {name: citedPatentNumber, in: query, schema: {type: string}}
+      - {name: offset, in: query, schema: {type: integer}}
+      - {name: limit, in: query, schema: {type: integer}}
+      responses:
+        '200': {description: Enriched citation results, content: {application/json: {schema: {type: object}}}}
+  /api/v1/oa/enriched-citations/fields:
+    get:
+      tags: [Enriched Citations]
+      summary: Get Enriched Citation Fields
+      operationId: getEnrichedCitationFields
+      responses:
+        '200': {description: Field metadata, content: {application/json: {schema: {type: object}}}}
+components:
+  securitySchemes:
+    ApiKeyAuth: {type: apiKey, in: header, name: X-API-KEY}
+  schemas:
+    OfficeActionText:
+      type: object
+      properties:
+        officeActionIdentifier: {type: string}
+        applicationNumberText: {type: string}
+        mailDate: {type: string, format: date}
+        officeActionText: {type: string}
+        rejections:
+          type: array
+          items:
+            type: object
+            properties:
+              rejectionBasisCategory: {type: string}
+              claimNumbers: {type: array, items: {type: string}}
+              citedReferences: {type: array, items: {type: string}}
+    OfficeActionTextSearchResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        results:
+          type: array
+          items: {$ref: '#/components/schemas/OfficeActionText'}

@@ -1,0 +1,335 @@
+openapi: 3.0.3
+info:
+  title: USPTO Patent File Wrapper API
+  version: '1.0'
+  description: |
+    USPTO Open Data Portal (ODP) Patent File Wrapper API. Search and retrieve U.S. patent
+    application file wrappers including bibliographic data, assignment history, prosecution
+    documents (office actions, responses, claims, drawings), continuity, foreign priority,
+    attorney/agent info, and patent term adjustments. Requires an ODP API key.
+  contact:
+    name: USPTO API Help
+    email: APIhelp@uspto.gov
+    url: https://data.uspto.gov/apis/getting-started
+  license:
+    name: U.S. Government Work
+    url: https://www.usa.gov/government-works
+servers:
+- url: https://api.uspto.gov
+  description: USPTO Open Data Portal
+security:
+- ApiKeyAuth: []
+tags:
+- name: Search
+  description: Search patent applications
+- name: Application
+  description: Retrieve patent application data
+- name: Documents
+  description: Retrieve patent application documents
+- name: Assignments
+  description: Retrieve assignment records
+paths:
+  /api/v1/patent/applications/search:
+    get:
+      tags: [Search]
+      summary: Search Patent Applications
+      operationId: searchPatentApplications
+      parameters:
+      - name: q
+        in: query
+        description: Search query (Lucene-style).
+        schema: {type: string}
+      - name: applicationNumberText
+        in: query
+        schema: {type: string}
+      - name: patentNumber
+        in: query
+        schema: {type: string}
+      - name: filingDateFrom
+        in: query
+        schema: {type: string, format: date}
+      - name: filingDateTo
+        in: query
+        schema: {type: string, format: date}
+      - name: offset
+        in: query
+        schema: {type: integer, default: 0}
+      - name: limit
+        in: query
+        schema: {type: integer, default: 25, maximum: 100}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/PatentApplicationSearchResponse'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '429': {$ref: '#/components/responses/RateLimited'}
+    post:
+      tags: [Search]
+      summary: Search Patent Applications With Body
+      operationId: searchPatentApplicationsPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/PatentSearchRequest'}
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/PatentApplicationSearchResponse'}
+  /api/v1/patent/applications/{applicationNumberText}:
+    get:
+      tags: [Application]
+      summary: Get Patent Application
+      operationId: getPatentApplication
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Patent application file wrapper.
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/PatentApplication'}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /api/v1/patent/applications/{applicationNumberText}/meta-data:
+    get:
+      tags: [Application]
+      summary: Get Patent Application Metadata
+      operationId: getPatentApplicationMetadata
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Application metadata.
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/PatentApplication'}
+  /api/v1/patent/applications/{applicationNumberText}/adjustment:
+    get:
+      tags: [Application]
+      summary: Get Patent Term Adjustment
+      operationId: getPatentTermAdjustment
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Patent term adjustment data.
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patent/applications/{applicationNumberText}/assignment:
+    get:
+      tags: [Assignments]
+      summary: Get Patent Assignments
+      operationId: getPatentAssignments
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Assignment history for the application.
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Assignment'}}
+  /api/v1/patent/applications/{applicationNumberText}/attorney:
+    get:
+      tags: [Application]
+      summary: Get Application Attorney/Agent
+      operationId: getApplicationAttorney
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Attorney/agent information.
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patent/applications/{applicationNumberText}/continuity:
+    get:
+      tags: [Application]
+      summary: Get Application Continuity
+      operationId: getApplicationContinuity
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Parent/child continuity relationships.
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patent/applications/{applicationNumberText}/foreign-priority:
+    get:
+      tags: [Application]
+      summary: Get Application Foreign Priority
+      operationId: getApplicationForeignPriority
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Foreign priority claims.
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patent/applications/{applicationNumberText}/transactions:
+    get:
+      tags: [Application]
+      summary: Get Application Transactions
+      operationId: getApplicationTransactions
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: Prosecution transaction history.
+          content:
+            application/json:
+              schema: {type: object}
+  /api/v1/patent/applications/{applicationNumberText}/documents:
+    get:
+      tags: [Documents]
+      summary: List Application Documents
+      operationId: listApplicationDocuments
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: List of documents in the file wrapper.
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Document'}}
+  /api/v1/download/applications/{applicationNumberText}/{documentId}.pdf:
+    get:
+      tags: [Documents]
+      summary: Download Application Document PDF
+      operationId: downloadApplicationDocumentPdf
+      parameters:
+      - name: applicationNumberText
+        in: path
+        required: true
+        schema: {type: string}
+      - name: documentId
+        in: path
+        required: true
+        schema: {type: string}
+      responses:
+        '200':
+          description: PDF binary.
+          content:
+            application/pdf:
+              schema: {type: string, format: binary}
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+  responses:
+    Unauthorized:
+      description: Missing or invalid API key.
+    NotFound:
+      description: Resource not found.
+    RateLimited:
+      description: Rate limit exceeded.
+  schemas:
+    PatentSearchRequest:
+      type: object
+      properties:
+        q: {type: string}
+        filters: {type: object, additionalProperties: true}
+        sort: {type: array, items: {type: string}}
+        offset: {type: integer}
+        limit: {type: integer}
+    PatentApplicationSearchResponse:
+      type: object
+      properties:
+        count: {type: integer}
+        offset: {type: integer}
+        limit: {type: integer}
+        patentBag:
+          type: array
+          items: {$ref: '#/components/schemas/PatentApplication'}
+    PatentApplication:
+      type: object
+      properties:
+        applicationNumberText: {type: string}
+        patentNumber: {type: string}
+        filingDate: {type: string, format: date}
+        grantDate: {type: string, format: date}
+        publicationDate: {type: string, format: date}
+        publicationNumber: {type: string}
+        applicationTypeCategory: {type: string}
+        applicationStatusCode: {type: string}
+        applicationStatusDescriptionText: {type: string}
+        applicationStatusDate: {type: string, format: date}
+        inventionTitle: {type: string}
+        firstInventorToFileIndicator: {type: string}
+        examinerNameText: {type: string}
+        groupArtUnitNumber: {type: string}
+        classSubclass: {type: string}
+        cpcClassificationBag: {type: array, items: {type: string}}
+        applicantBag: {type: array, items: {$ref: '#/components/schemas/Party'}}
+        inventorBag: {type: array, items: {$ref: '#/components/schemas/Party'}}
+        correspondenceAddressBag: {type: array, items: {type: object}}
+    Party:
+      type: object
+      properties:
+        firstName: {type: string}
+        lastName: {type: string}
+        nameLineOneText: {type: string}
+        country: {type: string}
+        cityName: {type: string}
+        geographicRegionName: {type: string}
+    Document:
+      type: object
+      properties:
+        documentIdentifier: {type: string}
+        documentCode: {type: string}
+        documentCodeDescriptionText: {type: string}
+        officialDate: {type: string, format: date}
+        pageTotalQuantity: {type: integer}
+        directionCategory: {type: string}
+        downloadOptionBag:
+          type: array
+          items:
+            type: object
+            properties:
+              mimeTypeIdentifier: {type: string}
+              downloadUrl: {type: string, format: uri}
+    Assignment:
+      type: object
+      properties:
+        reelNumber: {type: string}
+        frameNumber: {type: string}
+        recordedDate: {type: string, format: date}
+        executionDate: {type: string, format: date}
+        conveyanceText: {type: string}
+        assignorBag: {type: array, items: {$ref: '#/components/schemas/Party'}}
+        assigneeBag: {type: array, items: {$ref: '#/components/schemas/Party'}}
