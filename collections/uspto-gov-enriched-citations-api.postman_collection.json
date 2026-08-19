@@ -1,0 +1,253 @@
+{
+  "item": [
+    {
+      "id": "a8488a04-680f-4cef-85a0-d1903e9198cb",
+      "name": "Enriched Citations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3361d99d-0eee-476a-953c-426c800808b9",
+          "name": "Search Enriched Citations",
+          "request": {
+            "name": "Search Enriched Citations",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "oa",
+                "enriched-citations",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "applicationNumberText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "citedPatentNumber",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00014e0f-76c7-46db-87ab-230397961b2c",
+              "name": "Enriched citation results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "oa",
+                    "enriched-citations",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "citedPatentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e1507890-87d1-473c-97ec-29df3b8d71ca",
+          "name": "Get Enriched Citation Fields",
+          "request": {
+            "name": "Get Enriched Citation Fields",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "oa",
+                "enriched-citations",
+                "fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1962c69f-9c8e-4a62-ae26-0caf61b4d236",
+              "name": "Field metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "oa",
+                    "enriched-citations",
+                    "fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "34fb4a6e-c14e-4d91-9574-26ebc00e34dc",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Enriched Citations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

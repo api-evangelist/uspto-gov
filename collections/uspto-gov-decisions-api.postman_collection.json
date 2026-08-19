@@ -1,0 +1,287 @@
+{
+  "item": [
+    {
+      "id": "ef3b49e4-cb4e-4d27-8f91-09b69c76d42f",
+      "name": "Decisions",
+      "description": {
+        "content": "PTAB decisions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1a1e386-0af0-4f2d-af66-e9c0fb413e76",
+          "name": "Search Decisions",
+          "request": {
+            "name": "Search Decisions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "decisions",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "proceedingNumber",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "decisionTypeCategory",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "decisionDateFrom",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "decisionDateTo",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c6235080-ac20-4e68-aeea-5c2b7ed6352b",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "decisions",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "proceedingNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "decisionTypeCategory",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "decisionDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "decisionDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 5671,\n  \"results\": [\n    {\n      \"decisionIdentifier\": \"string\",\n      \"proceedingNumber\": \"string\",\n      \"decisionTypeCategory\": \"string\",\n      \"decisionDate\": \"1997-06-09\",\n      \"decisionOutcomeCategory\": \"string\",\n      \"authoringAdministrativePatentJudgeName\": \"string\",\n      \"documentIdentifier\": \"string\"\n    },\n    {\n      \"decisionIdentifier\": \"string\",\n      \"proceedingNumber\": \"string\",\n      \"decisionTypeCategory\": \"string\",\n      \"decisionDate\": \"2007-08-17\",\n      \"decisionOutcomeCategory\": \"string\",\n      \"authoringAdministrativePatentJudgeName\": \"string\",\n      \"documentIdentifier\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4465b976-d830-4588-b8b5-20ff182b15dd",
+          "name": "Get Decision",
+          "request": {
+            "name": "Get Decision",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "decisions",
+                ":decisionIdentifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "decisionIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "89c53f99-f042-4b44-b6f7-01b1868ba951",
+              "name": "Decision detail",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "decisions",
+                    ":decisionIdentifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "decisionIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"decisionIdentifier\": \"string\",\n  \"proceedingNumber\": \"string\",\n  \"decisionTypeCategory\": \"string\",\n  \"decisionDate\": \"1965-04-29\",\n  \"decisionOutcomeCategory\": \"string\",\n  \"authoringAdministrativePatentJudgeName\": \"string\",\n  \"documentIdentifier\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7fc3e29c-cf62-43e6-a12a-2ef67b334525",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Decisions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

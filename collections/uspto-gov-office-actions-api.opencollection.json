@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Office Actions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Office Actions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Office Action Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/text/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mailDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mailDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Office Action Text"
+        },
+        {
+          "info": {
+            "name": "Get Office Action Text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/text/:officeActionIdentifier",
+            "params": [
+              {
+                "name": "officeActionIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Office Action Text"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

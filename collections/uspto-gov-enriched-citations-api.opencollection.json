@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Enriched Citations API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Enriched Citations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Enriched Citations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/enriched-citations/search",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "citedPatentNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Enriched Citations"
+        },
+        {
+          "info": {
+            "name": "Get Enriched Citation Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/enriched-citations/fields"
+          },
+          "docs": "Get Enriched Citation Fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

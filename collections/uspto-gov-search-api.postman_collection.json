@@ -1,0 +1,446 @@
+{
+  "item": [
+    {
+      "id": "db70d252-eea3-4c54-991e-e7012ac4a468",
+      "name": "Search",
+      "description": {
+        "content": "Search patent applications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ea396ca5-5e58-4d24-9cad-6b4065a593c0",
+          "name": "Search Patent Applications",
+          "request": {
+            "name": "Search Patent Applications",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Search query (Lucene-style)."
+                },
+                {
+                  "disabled": false,
+                  "key": "applicationNumberText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "patentNumber",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filingDateFrom",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filingDateTo",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "995ee100-e6c3-4dbf-b377-ce1a1b3bb00c",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 6700,\n  \"offset\": 1312,\n  \"limit\": 1190,\n  \"patentBag\": [\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"2012-04-03\",\n      \"grantDate\": \"1996-07-24\",\n      \"publicationDate\": \"1980-03-10\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1983-11-11\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"1971-09-11\",\n      \"grantDate\": \"1996-07-24\",\n      \"publicationDate\": \"1984-09-24\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1992-12-06\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "beb36b1b-42a7-4b12-a627-c49ae0cc1ef5",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "498f65d0-d038-402b-98ef-b560693564bf",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "patentNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c918d8dc-6e48-43d2-90d6-f7ca9f66a46a",
+          "name": "Search Patent Applications With Body",
+          "request": {
+            "name": "Search Patent Applications With Body",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"q\": \"<string>\",\n  \"filters\": {\n    \"key_0\": 8672.359970986907,\n    \"key_1\": 6309.419460934422\n  },\n  \"sort\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"offset\": \"<integer>\",\n  \"limit\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e4ae519c-4e53-4cb3-ba73-55231f5841ff",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"q\": \"<string>\",\n  \"filters\": {\n    \"key_0\": false,\n    \"key_1\": \"string\",\n    \"key_2\": true\n  },\n  \"sort\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"offset\": \"<integer>\",\n  \"limit\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4659,\n  \"offset\": 1914,\n  \"limit\": 1231,\n  \"patentBag\": [\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"2025-08-15\",\n      \"grantDate\": \"2019-12-15\",\n      \"publicationDate\": \"1951-05-22\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"1981-05-14\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"applicationNumberText\": \"string\",\n      \"patentNumber\": \"string\",\n      \"filingDate\": \"2011-11-01\",\n      \"grantDate\": \"1961-01-26\",\n      \"publicationDate\": \"1988-03-31\",\n      \"publicationNumber\": \"string\",\n      \"applicationTypeCategory\": \"string\",\n      \"applicationStatusCode\": \"string\",\n      \"applicationStatusDescriptionText\": \"string\",\n      \"applicationStatusDate\": \"2005-02-16\",\n      \"inventionTitle\": \"string\",\n      \"firstInventorToFileIndicator\": \"string\",\n      \"examinerNameText\": \"string\",\n      \"groupArtUnitNumber\": \"string\",\n      \"classSubclass\": \"string\",\n      \"cpcClassificationBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"applicantBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ],\n      \"inventorBag\": [\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        },\n        {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nameLineOneText\": \"string\",\n          \"country\": \"string\",\n          \"cityName\": \"string\",\n          \"geographicRegionName\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "05decfd1-8f00-4453-a033-79a3a739b7ad",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Search API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

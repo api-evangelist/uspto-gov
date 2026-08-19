@@ -1,0 +1,150 @@
+{
+  "item": [
+    {
+      "id": "618c49a2-335a-4d68-9c1f-26a3e1054ea0",
+      "name": "Assignments",
+      "description": {
+        "content": "Retrieve assignment records",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3c9a4cd8-3c93-4fda-b625-a49236c6e697",
+          "name": "Get Patent Assignments",
+          "request": {
+            "name": "Get Patent Assignments",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "assignment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "785ad824-6aeb-428d-a54e-082339924a5c",
+              "name": "Assignment history for the application.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "assignment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"reelNumber\": \"string\",\n    \"frameNumber\": \"string\",\n    \"recordedDate\": \"1991-06-12\",\n    \"executionDate\": \"1970-08-12\",\n    \"conveyanceText\": \"string\",\n    \"assignorBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ],\n    \"assigneeBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ]\n  },\n  {\n    \"reelNumber\": \"string\",\n    \"frameNumber\": \"string\",\n    \"recordedDate\": \"1981-04-08\",\n    \"executionDate\": \"1994-11-26\",\n    \"conveyanceText\": \"string\",\n    \"assignorBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ],\n    \"assigneeBag\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nameLineOneText\": \"string\",\n        \"country\": \"string\",\n        \"cityName\": \"string\",\n        \"geographicRegionName\": \"string\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d8a66c11-8e41-4af3-85e6-3f8a385d3b11",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Assignments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

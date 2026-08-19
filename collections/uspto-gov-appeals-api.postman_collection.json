@@ -1,0 +1,282 @@
+{
+  "item": [
+    {
+      "id": "1464e00d-cdc7-4f68-934d-e02f7d4adac8",
+      "name": "Appeals",
+      "description": {
+        "content": "PTAB appeal and interference decisions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5d637156-34ef-4b4b-b1fc-d7581399c215",
+          "name": "Search Appeal Decisions",
+          "request": {
+            "name": "Search Appeal Decisions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "appeals",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "applicationNumberText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "decisionDateFrom",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "decisionDateTo",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2d7e5461-c2d8-4d82-8362-544b440cad3b",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "appeals",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "decisionDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "decisionDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7982176-b28b-4bbb-9ef1-7b90dc367264",
+          "name": "Search Interference Decisions",
+          "request": {
+            "name": "Search Interference Decisions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "interferences",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "92f7fcff-0edf-49a6-8a2e-35c7ec1b4baa",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "interferences",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9a789a07-21d0-4974-8832-8736a532d004",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

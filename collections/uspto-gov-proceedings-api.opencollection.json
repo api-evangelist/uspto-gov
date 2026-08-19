@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Proceedings API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Proceedings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Proceedings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/proceedings/search",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "proceedingTypeCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "proceedingFilingDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "proceedingFilingDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "subProceedingTypeCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Proceedings"
+        },
+        {
+          "info": {
+            "name": "Get Proceeding",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/proceedings/:proceedingNumber",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Proceeding"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Search API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Patent Applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search query (Lucene-style)."
+              },
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "patentNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Patent Applications"
+        },
+        {
+          "info": {
+            "name": "Search Patent Applications With Body",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search Patent Applications With Body"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

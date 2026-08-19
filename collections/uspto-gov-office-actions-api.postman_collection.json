@@ -1,0 +1,287 @@
+{
+  "item": [
+    {
+      "id": "6cf43b1a-b29d-4fc4-9877-ab9e9b54e497",
+      "name": "Office Actions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f0dff495-f302-4178-acd9-fb634f9630a9",
+          "name": "Search Office Action Text",
+          "request": {
+            "name": "Search Office Action Text",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "oa",
+                "text",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "applicationNumberText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mailDateFrom",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mailDateTo",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a77a1b51-2d96-4cad-9034-f1d8a5ba8c40",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "oa",
+                    "text",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "applicationNumberText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "mailDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "mailDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 1247,\n  \"results\": [\n    {\n      \"officeActionIdentifier\": \"string\",\n      \"applicationNumberText\": \"string\",\n      \"mailDate\": \"1956-11-05\",\n      \"officeActionText\": \"string\",\n      \"rejections\": [\n        {\n          \"rejectionBasisCategory\": \"string\",\n          \"claimNumbers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"citedReferences\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"rejectionBasisCategory\": \"string\",\n          \"claimNumbers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"citedReferences\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"officeActionIdentifier\": \"string\",\n      \"applicationNumberText\": \"string\",\n      \"mailDate\": \"1953-08-14\",\n      \"officeActionText\": \"string\",\n      \"rejections\": [\n        {\n          \"rejectionBasisCategory\": \"string\",\n          \"claimNumbers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"citedReferences\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"rejectionBasisCategory\": \"string\",\n          \"claimNumbers\": [\n            \"string\",\n            \"string\"\n          ],\n          \"citedReferences\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf0e07b2-6ae0-4c6c-ad99-e874890ed2b4",
+          "name": "Get Office Action Text",
+          "request": {
+            "name": "Get Office Action Text",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "oa",
+                "text",
+                ":officeActionIdentifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "officeActionIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c86cc7f-1665-4c49-9201-5c9f276ce59b",
+              "name": "Office action text",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "oa",
+                    "text",
+                    ":officeActionIdentifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "officeActionIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"officeActionIdentifier\": \"string\",\n  \"applicationNumberText\": \"string\",\n  \"mailDate\": \"1948-10-22\",\n  \"officeActionText\": \"string\",\n  \"rejections\": [\n    {\n      \"rejectionBasisCategory\": \"string\",\n      \"claimNumbers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"citedReferences\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"rejectionBasisCategory\": \"string\",\n      \"claimNumbers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"citedReferences\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c60805ba-f5c9-4fb3-b9db-2273f4200a0a",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Office Actions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

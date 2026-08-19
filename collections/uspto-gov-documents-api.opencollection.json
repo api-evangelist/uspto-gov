@@ -1,0 +1,262 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Documents API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Documents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Application Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/documents",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Application Documents"
+        },
+        {
+          "info": {
+            "name": "Download Application Document PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/download/applications/:applicationNumberText/:documentId.pdf",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download Application Document PDF"
+        },
+        {
+          "info": {
+            "name": "Search Documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/documents/search",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filingDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Documents"
+        },
+        {
+          "info": {
+            "name": "Get Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/documents/:documentIdentifier",
+            "params": [
+              {
+                "name": "documentIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Document"
+        },
+        {
+          "info": {
+            "name": "Download Document",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/documents/:documentIdentifier/download",
+            "params": [
+              {
+                "name": "documentIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Download Document"
+        },
+        {
+          "info": {
+            "name": "Get Case Documents PDF Bundle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/ts/cd/casedocs/bundle.pdf",
+            "params": [
+              {
+                "name": "sn",
+                "value": "",
+                "type": "query",
+                "description": "Serial number"
+              },
+              {
+                "name": "rn",
+                "value": "",
+                "type": "query",
+                "description": "Registration number"
+              },
+              {
+                "name": "rf",
+                "value": "",
+                "type": "query",
+                "description": "Reference number"
+              },
+              {
+                "name": "ir",
+                "value": "",
+                "type": "query",
+                "description": "International registration number"
+              }
+            ]
+          },
+          "docs": "Get Case Documents PDF Bundle"
+        },
+        {
+          "info": {
+            "name": "Get Case Documents ZIP Bundle",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/ts/cd/casedocs/bundle.zip",
+            "params": [
+              {
+                "name": "sn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rn",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "rf",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ir",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Case Documents ZIP Bundle"
+        },
+        {
+          "info": {
+            "name": "Get Single Case Document PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/ts/cd/casedocs/:sn/:documentIdentifier.pdf",
+            "params": [
+              {
+                "name": "sn",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Single Case Document PDF"
+        },
+        {
+          "info": {
+            "name": "Get Mark Image",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/ts/cd/rgbimg/sn:serialNumber/:imageType.jpg",
+            "params": [
+              {
+                "name": "serialNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "imageType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Mark Image"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

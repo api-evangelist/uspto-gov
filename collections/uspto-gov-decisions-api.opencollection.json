@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Decisions API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Decisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Decisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/decisions/search",
+            "params": [
+              {
+                "name": "proceedingNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionTypeCategory",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "decisionDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Decisions"
+        },
+        {
+          "info": {
+            "name": "Get Decision",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/ptab/decisions/:decisionIdentifier",
+            "params": [
+              {
+                "name": "decisionIdentifier",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Decision"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Citations API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Citations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search Office Action Citations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/citations/search",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "citedPatentNumber",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search Office Action Citations"
+        },
+        {
+          "info": {
+            "name": "Get Office Action Citation Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/oa/citations/fields"
+          },
+          "docs": "Get Office Action Citation Fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

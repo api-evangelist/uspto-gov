@@ -1,0 +1,1054 @@
+{
+  "item": [
+    {
+      "id": "7205047b-aaf0-44c2-9d34-30a5e77854e3",
+      "name": "Documents",
+      "description": {
+        "content": "Retrieve patent application documents",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a8998a7a-aba0-4798-aa57-33a3a114b58a",
+          "name": "List Application Documents",
+          "request": {
+            "name": "List Application Documents",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "patent",
+                "applications",
+                ":applicationNumberText",
+                "documents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7baf1b4-23b3-4c6f-8ba4-188a63f468f1",
+              "name": "List of documents in the file wrapper.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "patent",
+                    "applications",
+                    ":applicationNumberText",
+                    "documents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"documentIdentifier\": \"string\",\n    \"documentCode\": \"string\",\n    \"documentCodeDescriptionText\": \"string\",\n    \"officialDate\": \"1996-05-30\",\n    \"pageTotalQuantity\": 8937,\n    \"directionCategory\": \"string\",\n    \"downloadOptionBag\": [\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"https://jPAFWhPYHLmEVyBTRRUkL.fldxh4MUJ9Kjdgr,-1px-bzsaVnTs1WKKN-H\"\n      },\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"http://eGDxUqqFyZUCVaa.rgcgVwW6LqrujIQ94qzF.CFeUfr1wvdheUUwYF6MAGSkeaqOFHBB\"\n      }\n    ]\n  },\n  {\n    \"documentIdentifier\": \"string\",\n    \"documentCode\": \"string\",\n    \"documentCodeDescriptionText\": \"string\",\n    \"officialDate\": \"1954-08-15\",\n    \"pageTotalQuantity\": 7098,\n    \"directionCategory\": \"string\",\n    \"downloadOptionBag\": [\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"http://ntfXHynxoevoJWKnAltnQ.goobDJ6xACdmWQxn8Ntq3X,\"\n      },\n      {\n        \"mimeTypeIdentifier\": \"string\",\n        \"downloadUrl\": \"http://hhGWdMIIKewcXdwIe.wufEeHsRnq1zqIUxVzBdlwaWR72OnCme2S6fTMPQ8MTBg\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1e81b11c-553b-4b02-99f9-23c0916f6d8f",
+          "name": "Download Application Document PDF",
+          "request": {
+            "name": "Download Application Document PDF",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "download",
+                "applications",
+                ":applicationNumberText",
+                "{{documentId}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationNumberText",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5894d47a-4a2e-4967-95a2-f7d11446c995",
+              "name": "PDF binary.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "download",
+                    "applications",
+                    ":applicationNumberText",
+                    "{{documentId}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationNumberText",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7586f1e-f08b-48b5-9c7a-968d24de10e7",
+          "name": "Search Documents",
+          "request": {
+            "name": "Search Documents",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "documents",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "proceedingNumber",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "documentCategory",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filingDateFrom",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filingDateTo",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54435f1a-7739-4067-9f83-9f538e001cf5",
+              "name": "Search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "documents",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "proceedingNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "documentCategory",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filingDateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "filingDateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 9855,\n  \"results\": [\n    {\n      \"documentIdentifier\": \"string\",\n      \"proceedingNumber\": \"string\",\n      \"documentTitleText\": \"string\",\n      \"documentCategory\": \"string\",\n      \"filingDate\": \"1977-07-20\",\n      \"filingPartyCategory\": \"string\",\n      \"pageQuantity\": 9111,\n      \"downloadUrl\": \"https://zA.wdwdALL,ABmRBZkvUxgsPBjHgo,0V-DODwcX7RsjZroR6Ji0g+4lypNO\"\n    },\n    {\n      \"documentIdentifier\": \"string\",\n      \"proceedingNumber\": \"string\",\n      \"documentTitleText\": \"string\",\n      \"documentCategory\": \"string\",\n      \"filingDate\": \"1953-10-28\",\n      \"filingPartyCategory\": \"string\",\n      \"pageQuantity\": 5025,\n      \"downloadUrl\": \"http://sMCOspKUKBjhmIiLc.qkz2DZ0I+Jq+UoGO,t.\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "972bb874-44df-42fa-88fa-9db3e9162f03",
+          "name": "Get Document",
+          "request": {
+            "name": "Get Document",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "documents",
+                ":documentIdentifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2dfa247d-6e17-4619-92ca-846fb4693729",
+              "name": "Document metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "documents",
+                    ":documentIdentifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"documentIdentifier\": \"string\",\n  \"proceedingNumber\": \"string\",\n  \"documentTitleText\": \"string\",\n  \"documentCategory\": \"string\",\n  \"filingDate\": \"2020-06-09\",\n  \"filingPartyCategory\": \"string\",\n  \"pageQuantity\": 4133,\n  \"downloadUrl\": \"http://CbjfYwgDjSDPXkTHvyNlR.eaQFd53QjWu2PkI\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d9ddc69-a991-4254-a2c9-00400a888e6e",
+          "name": "Download Document",
+          "request": {
+            "name": "Download Document",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "ptab",
+                "documents",
+                ":documentIdentifier",
+                "download"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "documentIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "379ef46e-135f-4b29-8671-5bcb5b7286f7",
+              "name": "PDF binary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "ptab",
+                    "documents",
+                    ":documentIdentifier",
+                    "download"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "documentIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22caf6cc-19cc-4230-85e0-76b1fcfb8d68",
+          "name": "Get Case Documents PDF Bundle",
+          "request": {
+            "name": "Get Case Documents PDF Bundle",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casedocs",
+                "bundle.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sn",
+                  "value": "<string>",
+                  "description": "Serial number"
+                },
+                {
+                  "disabled": false,
+                  "key": "rn",
+                  "value": "<string>",
+                  "description": "Registration number"
+                },
+                {
+                  "disabled": false,
+                  "key": "rf",
+                  "value": "<string>",
+                  "description": "Reference number"
+                },
+                {
+                  "disabled": false,
+                  "key": "ir",
+                  "value": "<string>",
+                  "description": "International registration number"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c206d291-d8af-4cd9-9305-8a063e0a786f",
+              "name": "PDF bundle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casedocs",
+                    "bundle.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ir",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b98963f8-bc73-4a04-9048-ec352f7712a1",
+          "name": "Get Case Documents ZIP Bundle",
+          "request": {
+            "name": "Get Case Documents ZIP Bundle",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casedocs",
+                "bundle.zip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sn",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rn",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rf",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ir",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7b2bee9c-e3af-465a-a355-ce4be61265a7",
+              "name": "ZIP bundle",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casedocs",
+                    "bundle.zip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rn",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "rf",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ir",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c4b92dc9-afd4-41a3-99af-d799e0addbf9",
+          "name": "Get Single Case Document PDF",
+          "request": {
+            "name": "Get Single Case Document PDF",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "casedocs",
+                ":sn",
+                "{{documentIdentifier}}.pdf"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sn",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/pdf"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b90e4d22-fb68-4acf-8574-6f5d2344d586",
+              "name": "PDF binary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "casedocs",
+                    ":sn",
+                    "{{documentIdentifier}}.pdf"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sn",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/pdf"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/pdf"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68205456-5e8c-4717-b893-5a568517f5a8",
+          "name": "Get Mark Image",
+          "request": {
+            "name": "Get Mark Image",
+            "description": {},
+            "url": {
+              "path": [
+                "ts",
+                "cd",
+                "rgbimg",
+                "sn{{serialNumber}}",
+                "{{imageType}}.jpg"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "image/jpeg"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2da10b3b-6136-49c0-b5d3-92cfd34d0ac7",
+              "name": "JPEG",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ts",
+                    "cd",
+                    "rgbimg",
+                    "sn{{serialNumber}}",
+                    "{{imageType}}.jpg"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "image/jpeg"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "image/jpeg"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "documentId"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "documentIdentifier"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "serialNumber"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "imageType"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "60fee57d-ddd7-4a0d-9512-6b03d4aac98e",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Documents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Application API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Application",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Patent Application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Application"
+        },
+        {
+          "info": {
+            "name": "Get Patent Application Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/meta-data",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Application Metadata"
+        },
+        {
+          "info": {
+            "name": "Get Patent Term Adjustment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/adjustment",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Patent Term Adjustment"
+        },
+        {
+          "info": {
+            "name": "Get Application Attorney/Agent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/attorney",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Attorney/Agent"
+        },
+        {
+          "info": {
+            "name": "Get Application Continuity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/continuity",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Continuity"
+        },
+        {
+          "info": {
+            "name": "Get Application Foreign Priority",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/foreign-priority",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Foreign Priority"
+        },
+        {
+          "info": {
+            "name": "Get Application Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.uspto.gov/api/v1/patent/applications/:applicationNumberText/transactions",
+            "params": [
+              {
+                "name": "applicationNumberText",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Application Transactions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

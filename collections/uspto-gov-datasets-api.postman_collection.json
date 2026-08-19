@@ -1,0 +1,434 @@
+{
+  "item": [
+    {
+      "id": "c59a4e48-aa9e-4761-afb6-7ad6a181e0b1",
+      "name": "Datasets",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "16e1a581-392d-460f-b855-c1b02ead74fc",
+          "name": "Search Bulk Products",
+          "request": {
+            "name": "Search Bulk Products",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "datasets",
+                "products",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Free-text query"
+                },
+                {
+                  "disabled": false,
+                  "key": "productIdentifier",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "categoryCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42514a32-d31e-4450-969c-f3e106cd6bee",
+              "name": "Product search results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "datasets",
+                    "products",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "productIdentifier",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categoryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 8524,\n  \"bulkDataProductBag\": [\n    {\n      \"productIdentifier\": \"string\",\n      \"productTitleText\": \"string\",\n      \"productDescriptionText\": \"string\",\n      \"productFrequencyText\": \"string\",\n      \"productFromDate\": \"1998-02-19\",\n      \"productToDate\": \"1989-09-06\",\n      \"mimeTypeIdentifierBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"productFileBag\": [\n        {\n          \"fileName\": \"string\",\n          \"fileSize\": 5301,\n          \"fileDate\": \"1989-09-15\",\n          \"fileDownloadURI\": \"https://FqERlMowzUYnzQ.hcRNOqn5sNpjrFLQ+EVXGt5f-EMCrP4xozJE+wRKykKEZJxy4\"\n        },\n        {\n          \"fileName\": \"string\",\n          \"fileSize\": 8120,\n          \"fileDate\": \"1996-05-20\",\n          \"fileDownloadURI\": \"http://f.upnbevfoH1He\"\n        }\n      ]\n    },\n    {\n      \"productIdentifier\": \"string\",\n      \"productTitleText\": \"string\",\n      \"productDescriptionText\": \"string\",\n      \"productFrequencyText\": \"string\",\n      \"productFromDate\": \"1948-12-14\",\n      \"productToDate\": \"2026-04-07\",\n      \"mimeTypeIdentifierBag\": [\n        \"string\",\n        \"string\"\n      ],\n      \"productFileBag\": [\n        {\n          \"fileName\": \"string\",\n          \"fileSize\": 1495,\n          \"fileDate\": \"1949-12-17\",\n          \"fileDownloadURI\": \"https://ZLnOFcXVALCmDGBKKvxOAqXNdVltmtyQ.puueoux9SWBbkFF-.\"\n        },\n        {\n          \"fileName\": \"string\",\n          \"fileSize\": 7384,\n          \"fileDate\": \"1991-06-16\",\n          \"fileDownloadURI\": \"https://fMnsuWzfHAJCclTNOUPrwomt.ujp-U6dW33MO+e\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3f213f3-4d61-4a44-9fe2-f30505b19a64",
+          "name": "Get Bulk Product",
+          "request": {
+            "name": "Get Bulk Product",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "datasets",
+                "products",
+                ":productIdentifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fromDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "toDate",
+                  "value": "<date>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "productIdentifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e032894-0899-4076-b7b6-5e233f532e2e",
+              "name": "Product metadata with file list",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "datasets",
+                    "products",
+                    ":productIdentifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fromDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "productIdentifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"productIdentifier\": \"string\",\n  \"productTitleText\": \"string\",\n  \"productDescriptionText\": \"string\",\n  \"productFrequencyText\": \"string\",\n  \"productFromDate\": \"1983-08-30\",\n  \"productToDate\": \"1953-04-18\",\n  \"mimeTypeIdentifierBag\": [\n    \"string\",\n    \"string\"\n  ],\n  \"productFileBag\": [\n    {\n      \"fileName\": \"string\",\n      \"fileSize\": 251,\n      \"fileDate\": \"2006-10-03\",\n      \"fileDownloadURI\": \"http://PBiYwdPYfJq.yxjEUCXsZmp8YkqRHbe.vZzzWTWatLpOmNSQNiujIxk+w6BRVCHV,9oTwwYuA8Bn.P9Ucl7IhLumMz\"\n    },\n    {\n      \"fileName\": \"string\",\n      \"fileSize\": 7478,\n      \"fileDate\": \"1960-05-25\",\n      \"fileDownloadURI\": \"https://MGXGTAAkAPcRXjelR.kabDT.eu-,ORG8On,MLHI5jzMC-NA9e8H,6E\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dcaffe7a-2338-4b76-b183-0af236e52157",
+          "name": "Download Bulk Product File",
+          "request": {
+            "name": "Download Bulk Product File",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "datasets",
+                "products",
+                ":productIdentifier",
+                "files",
+                ":fileName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "productIdentifier",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "02ddd415-7f18-4bbd-8b18-303a82647149",
+              "name": "File binary",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "datasets",
+                    "products",
+                    ":productIdentifier",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "productIdentifier",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.uspto.gov",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9cae5999-39b1-40a3-812a-253a95c4b109",
+    "name": "USPTO Bulk Data Storage System (BDSS) Appeals Datasets API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download\npatent and trademark bulk datasets (bibliographic, assignment, classification, office-action\nweekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)\nin XML/JSON. Does not support general filter/limit/offset/order_by database queries.\n\n\nContact Support:\n Name: USPTO API Help\n Email: APIhelp@uspto.gov",
+      "type": "text/plain"
+    }
+  }
+}
