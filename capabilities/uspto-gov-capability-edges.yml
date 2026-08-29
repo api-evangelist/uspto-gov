@@ -1,0 +1,36 @@
+slug: uspto-gov
+provider: USPTO
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Public Sector & Government
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Appeals
+  spec_file: uspto-gov-appeals-api-openapi.yml
+  capability_id: BC-3320.70
+  capability_id_l1: BC-3320
+  capability_name: Court Records and Public Access
+  confidence: 0.7
+  evidence: GET /api/v1/ptab/appeals/search  searchPtabAppeals  Search Appeal Decisions; 'Search Interference
+    Decisions'
+  reason: PTAB is an administrative adjudicative tribunal; this surface provides public search access
+    to its appeal and interference decisions, matching court/tribunal records and public access. Alternative
+    reading is BC-3220.50 appeals/administrative review, hence moderate confidence on the sub-capability.
+- tag: Status
+  spec_file: uspto-gov-status-api-openapi.yml
+  capability_id: BC-840.20
+  capability_id_l1: BC-840
+  capability_name: Trademark Management
+  confidence: 0.7
+  evidence: Get Case Status By Serial Number JSON; Programmatic access to U.S. trademark case status,
+    file wrapper documents, and images
+  reason: Endpoints return trademark case status by serial, registration, reference or international registration
+    number — trademark filing status monitoring/watch, i.e. BC-840.20 Trademark Management.

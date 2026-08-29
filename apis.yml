@@ -780,6 +780,9 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uspto-gov.png
 access: 3rd-Party
 common:
+  - type: CapabilityMap
+    url: capabilities/uspto-gov-capability-edges.yml
+    name: USPTO Business Capability Map
   - type: AgenticAccess
     url: agentic-access/uspto-gov-agentic-access.yml
   - type: DomainSecurity
