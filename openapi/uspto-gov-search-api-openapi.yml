@@ -1,19 +1,23 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: USPTO Bulk Data Storage System (BDSS) Appeals Search API
+  title: USPTO Patent File Wrapper Search API
   version: '1.0'
-  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+  description: 'USPTO Open Data Portal (ODP) Patent File Wrapper API. Search and retrieve U.S. patent
 
-    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+    application file wrappers including bibliographic data, assignment history, prosecution
 
-    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
+    documents (office actions, responses, claims, drawings), continuity, foreign priority,
 
-    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+    attorney/agent info, and patent term adjustments. Requires an ODP API key.
 
     '
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov
+    url: https://data.uspto.gov/apis/getting-started
+  license:
+    name: U.S. Government Work
+    url: https://www.usa.gov/government-works
 servers:
 - url: https://api.uspto.gov
   description: USPTO Open Data Portal
@@ -94,11 +98,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/PatentApplicationSearchResponse'
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid API key.
-    RateLimited:
-      description: Rate limit exceeded.
   schemas:
     PatentApplicationSearchResponse:
       type: object
@@ -113,21 +112,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PatentApplication'
-    Party:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        nameLineOneText:
-          type: string
-        country:
-          type: string
-        cityName:
-          type: string
-        geographicRegionName:
-          type: string
     PatentSearchRequest:
       type: object
       properties:
@@ -144,6 +128,21 @@ components:
           type: integer
         limit:
           type: integer
+    Party:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nameLineOneText:
+          type: string
+        country:
+          type: string
+        cityName:
+          type: string
+        geographicRegionName:
+          type: string
     PatentApplication:
       type: object
       properties:
@@ -197,6 +196,11 @@ components:
           type: array
           items:
             type: object
+  responses:
+    RateLimited:
+      description: Rate limit exceeded.
+    Unauthorized:
+      description: Missing or invalid API key.
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

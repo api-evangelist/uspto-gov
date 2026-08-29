@@ -1,14 +1,12 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: USPTO Bulk Data Storage System (BDSS) Appeals Decisions API
-  version: '1.0'
-  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
+  title: USPTO Patent Trial and Appeal Board (PTAB) Decisions API
+  version: '3.0'
+  description: 'PTAB API v3 hosted on the USPTO Open Data Portal. Search and retrieve PTAB trial proceedings
 
-    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
+    (IPR, PGR, CBM, derivation), trial decisions, trial documents, and historical appeal/interference
 
-    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
-
-    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
+    decisions. Coverage 1997 to present; full trial decisions and party briefing since September 2012.
 
     '
   contact:
@@ -85,6 +83,15 @@ paths:
                 $ref: '#/components/schemas/Decision'
 components:
   schemas:
+    DecisionSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Decision'
     Decision:
       type: object
       properties:
@@ -103,15 +110,6 @@ components:
           type: string
         documentIdentifier:
           type: string
-    DecisionSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Decision'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

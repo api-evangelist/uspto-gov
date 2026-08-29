@@ -1,22 +1,13 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: USPTO Bulk Data Storage System (BDSS) Appeals Documents API
+  title: Uspto Gov Documents API
   version: '1.0'
-  description: 'USPTO ODP Bulk Data API. Exposes the Bulk Data Storage System (BDSS) — search and download
-
-    patent and trademark bulk datasets (bibliographic, assignment, classification, office-action
-
-    weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
-
-    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
-
-    '
-  contact:
-    name: USPTO API Help
-    email: APIhelp@uspto.gov
+  description: 'Operations tagged Documents across 3 of this provider''s published API definitions: uspto-patent-file-wrapper-openapi.yml, uspto-ptab-openapi.yml, uspto-tsdr-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.uspto.gov
   description: USPTO Open Data Portal
+- url: https://tsdrapi.uspto.gov
+  description: USPTO TSDR API
 security:
 - ApiKeyAuth: []
 tags:
@@ -44,6 +35,9 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Document'
+    servers:
+    - url: https://api.uspto.gov
+      description: USPTO Open Data Portal
   /api/v1/download/applications/{applicationNumberText}/{documentId}.pdf:
     get:
       tags:
@@ -69,6 +63,9 @@ paths:
               schema:
                 type: string
                 format: binary
+    servers:
+    - url: https://api.uspto.gov
+      description: USPTO Open Data Portal
   /api/v1/ptab/documents/search:
     get:
       tags:
@@ -110,6 +107,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DocumentSearchResponse'
+    servers:
+    - url: https://api.uspto.gov
+      description: USPTO Open Data Portal
   /api/v1/ptab/documents/{documentIdentifier}:
     get:
       tags:
@@ -129,6 +129,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Document_2'
+    servers:
+    - url: https://api.uspto.gov
+      description: USPTO Open Data Portal
   /api/v1/ptab/documents/{documentIdentifier}/download:
     get:
       tags:
@@ -149,6 +152,9 @@ paths:
               schema:
                 type: string
                 format: binary
+    servers:
+    - url: https://api.uspto.gov
+      description: USPTO Open Data Portal
   /ts/cd/casedocs/bundle.pdf:
     get:
       tags:
@@ -184,6 +190,9 @@ paths:
               schema:
                 type: string
                 format: binary
+    servers:
+    - url: https://tsdrapi.uspto.gov
+      description: USPTO TSDR API
   /ts/cd/casedocs/bundle.zip:
     get:
       tags:
@@ -215,6 +224,9 @@ paths:
               schema:
                 type: string
                 format: binary
+    servers:
+    - url: https://tsdrapi.uspto.gov
+      description: USPTO TSDR API
   /ts/cd/casedocs/{sn}/{documentIdentifier}.pdf:
     get:
       tags:
@@ -240,6 +252,9 @@ paths:
               schema:
                 type: string
                 format: binary
+    servers:
+    - url: https://tsdrapi.uspto.gov
+      description: USPTO TSDR API
   /ts/cd/rgbimg/sn{serialNumber}/{imageType}.jpg:
     get:
       tags:
@@ -268,8 +283,37 @@ paths:
               schema:
                 type: string
                 format: binary
+    servers:
+    - url: https://tsdrapi.uspto.gov
+      description: USPTO TSDR API
 components:
   schemas:
+    Document:
+      type: object
+      properties:
+        documentIdentifier:
+          type: string
+        documentCode:
+          type: string
+        documentCodeDescriptionText:
+          type: string
+        officialDate:
+          type: string
+          format: date
+        pageTotalQuantity:
+          type: integer
+        directionCategory:
+          type: string
+        downloadOptionBag:
+          type: array
+          items:
+            type: object
+            properties:
+              mimeTypeIdentifier:
+                type: string
+              downloadUrl:
+                type: string
+                format: uri
     Document_2:
       type: object
       properties:
@@ -300,34 +344,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Document_2'
-    Document:
-      type: object
-      properties:
-        documentIdentifier:
-          type: string
-        documentCode:
-          type: string
-        documentCodeDescriptionText:
-          type: string
-        officialDate:
-          type: string
-          format: date
-        pageTotalQuantity:
-          type: integer
-        directionCategory:
-          type: string
-        downloadOptionBag:
-          type: array
-          items:
-            type: object
-            properties:
-              mimeTypeIdentifier:
-                type: string
-              downloadUrl:
-                type: string
-                format: uri
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
       in: header
       name: X-API-KEY
+x-refined-from:
+- uspto-patent-file-wrapper-openapi.yml
+- uspto-ptab-openapi.yml
+- uspto-tsdr-openapi.yml
