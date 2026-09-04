@@ -743,16 +743,125 @@ apis:
     url: https://developer.uspto.gov/api-catalog/patentsview
   - type: Documentation
     url: https://patentsview.org/apis/api-endpoints
+- aid: uspto-gov:assignment-search-api
+  name: USPTO Patent Assignment Search API
+  description: The USPTO Patent Assignment Search API retrieves patent assignment information including ownership
+    transfers, recorded assignments, and assignment history for individual patents and patent portfolios.
+  tags:
+  - Assignments
+  - Government
+  - Patents
+  - Regulatory
+  humanURL: https://developer.uspto.gov/api-catalog
+  properties:
+  - type: Documentation
+    url: https://developer.uspto.gov/api-catalog
+- aid: uspto-gov:uspto-assignments-api
+  name: USPTO Assignments API
+  description: Patent assignment records
+  humanURL: https://developer.uspto.gov/
+  baseURL: https://data.uspto.gov/api/v1
+  tags:
+  - Assignments
+  properties:
+  - type: OpenAPI
+    url: openapi/uspto-assignments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uspto.gov/
+  - type: Reference
+    url: https://developer.uspto.gov/api-catalog
+  - type: JSONSchema
+    url: json-schema/uspto-patent-schema.json
+  - type: Documentation
+    url: https://data.uspto.gov/ptab
+  - type: Documentation
+    url: https://developer.uspto.gov/swagger/tsdr-api-v1
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
+- aid: uspto-gov:uspto-patents-api
+  name: USPTO Patents API
+  description: Patent search and retrieval
+  humanURL: https://developer.uspto.gov/
+  baseURL: https://data.uspto.gov/api/v1
+  tags:
+  - Patents
+  properties:
+  - type: OpenAPI
+    url: openapi/uspto-patents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uspto.gov/
+  - type: Reference
+    url: https://developer.uspto.gov/api-catalog
+  - type: JSONSchema
+    url: json-schema/uspto-patent-schema.json
+  - type: Documentation
+    url: https://data.uspto.gov/ptab
+  - type: Documentation
+    url: https://developer.uspto.gov/swagger/tsdr-api-v1
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
+- aid: uspto-gov:uspto-ptab-api
+  name: USPTO PTAB API
+  description: Patent Trial and Appeal Board proceedings
+  humanURL: https://developer.uspto.gov/
+  baseURL: https://data.uspto.gov/api/v1
+  tags:
+  - PTAB
+  properties:
+  - type: OpenAPI
+    url: openapi/uspto-ptab-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uspto.gov/
+  - type: Reference
+    url: https://developer.uspto.gov/api-catalog
+  - type: JSONSchema
+    url: json-schema/uspto-patent-schema.json
+  - type: Documentation
+    url: https://data.uspto.gov/ptab
+  - type: Documentation
+    url: https://developer.uspto.gov/swagger/tsdr-api-v1
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
+- aid: uspto-gov:uspto-trademarks-api
+  name: USPTO Trademarks API
+  description: Trademark status and documents
+  humanURL: https://developer.uspto.gov/
+  baseURL: https://data.uspto.gov/api/v1
+  tags:
+  - Trademarks
+  properties:
+  - type: OpenAPI
+    url: openapi/uspto-trademarks-api-openapi.yml
+  - type: Documentation
+    url: https://developer.uspto.gov/
+  - type: Reference
+    url: https://developer.uspto.gov/api-catalog
+  - type: JSONSchema
+    url: json-schema/uspto-patent-schema.json
+  - type: Documentation
+    url: https://data.uspto.gov/ptab
+  - type: Documentation
+    url: https://developer.uspto.gov/swagger/tsdr-api-v1
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
+  - type: Documentation
+    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
 name: USPTO
 tags:
-  - Patents
-  - Trademarks
-  - Intellectual Property
-  - Government
-  - Federal
-  - Open Data
-  - PTAB
-  - TSDR
+- Patents
+- Trademarks
+- Intellectual Property
+- Government
+- Federal
+- Open Data
+- PTAB
+- TSDR
 kind: government
 deliveryModel:
   model: unknown
@@ -767,82 +876,87 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/uspto-gov.png
 access: 3rd-Party
 common:
-  - type: CapabilityMap
-    url: capabilities/uspto-gov-capability-edges.yml
-    name: USPTO Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/uspto-gov-agentic-access.yml
-  - type: DomainSecurity
-    url: security/uspto-gov-domain-security.yml
-  - type: Authentication
-    url: authentication/uspto-gov-authentication.yml
-  - type: Website
-    url: https://www.uspto.gov/
-  - type: Portal
-    url: https://data.uspto.gov/
-  - type: Documentation
-    url: https://developer.uspto.gov/api-catalog
-    name: API Catalog
-  - type: Documentation
-    url: https://data.uspto.gov/apis/getting-started
-    name: ODP Getting Started
-  - type: Documentation
-    url: https://data.uspto.gov/apis/transition-guide
-    name: PEDS to ODP Transition Guide
-  - type: Documentation
-    url: https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf
-    name: BDSS to ODP API Mapping
-  - type: Documentation
-    url: https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf
-    name: TSDR API Key Manager User Guide
-  - type: Authentication
-    url: https://data.uspto.gov/apis/getting-started
-    name: ODP API Key Registration
-  - type: RateLimits
-    url: https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide
-    name: TSDR Rate Limits
-  - type: Support
-    url: mailto:APIhelp@uspto.gov
-    name: USPTO API Help
-  - type: Support
-    url: mailto:contactUXD@uspto.gov
-    name: USPTO Developer Support
-  - type: GitHub
-    url: https://github.com/USPTO
-  - type: DataPortal
-    url: https://catalog.data.gov/organization/uspto-gov
-    name: USPTO on data.gov
-  - type: BulkData
-    url: https://data.uspto.gov/patent-file-wrapper/bulkdata/entire
-    name: Patent File Wrapper Bulk Datasets
-  - type: Trademark
-    url: https://tsdr.uspto.gov/
-    name: TSDR Web Portal
-  - type: Trademark
-    url: https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data
-    name: Trademark Bulk Data
-  - type: Patent
-    url: https://patentcenter.uspto.gov/
-    name: Patent Center
-  - type: Vocabulary
-    url: vocabulary/uspto-gov-vocabulary.yml
-  - type: RateLimits
-    url: rate-limits/uspto-gov-rate-limits.yml
-  - url: https://www.uspto.gov/rss.xml
-    type: Blog
+- type: CapabilityMap
+  url: capabilities/uspto-gov-capability-edges.yml
+  name: USPTO Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/uspto-gov-agentic-access.yml
+- type: DomainSecurity
+  url: security/uspto-gov-domain-security.yml
+- type: Authentication
+  url: authentication/uspto-gov-authentication.yml
+- type: Website
+  url: https://www.uspto.gov/
+- type: Portal
+  url: https://data.uspto.gov/
+- type: Documentation
+  url: https://developer.uspto.gov/api-catalog
+  name: API Catalog
+- type: Documentation
+  url: https://data.uspto.gov/apis/getting-started
+  name: ODP Getting Started
+- type: Documentation
+  url: https://data.uspto.gov/apis/transition-guide
+  name: PEDS to ODP Transition Guide
+- type: Documentation
+  url: https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf
+  name: BDSS to ODP API Mapping
+- type: Documentation
+  url: https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf
+  name: TSDR API Key Manager User Guide
+- type: Authentication
+  url: https://data.uspto.gov/apis/getting-started
+  name: ODP API Key Registration
+- type: RateLimits
+  url: https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide
+  name: TSDR Rate Limits
+- type: Support
+  url: mailto:APIhelp@uspto.gov
+  name: USPTO API Help
+- type: Support
+  url: mailto:contactUXD@uspto.gov
+  name: USPTO Developer Support
+- type: GitHub
+  url: https://github.com/USPTO
+- type: DataPortal
+  url: https://catalog.data.gov/organization/uspto-gov
+  name: USPTO on data.gov
+- type: BulkData
+  url: https://data.uspto.gov/patent-file-wrapper/bulkdata/entire
+  name: Patent File Wrapper Bulk Datasets
+- type: Trademark
+  url: https://tsdr.uspto.gov/
+  name: TSDR Web Portal
+- type: Trademark
+  url: https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data
+  name: Trademark Bulk Data
+- type: Patent
+  url: https://patentcenter.uspto.gov/
+  name: Patent Center
+- type: Vocabulary
+  url: vocabulary/uspto-gov-vocabulary.yml
+- type: RateLimits
+  url: rate-limits/uspto-gov-rate-limits.yml
+- url: https://www.uspto.gov/rss.xml
+  type: Blog
+- type: Portal
+  url: https://developer.uspto.gov/
+- type: Documentation
+  url: https://developer.uspto.gov/
 created: '2026-05-25'
 modified: '2026-05-25'
 specificationVersion: '0.23'
