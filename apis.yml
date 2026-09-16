@@ -745,8 +745,9 @@ apis:
     url: https://patentsview.org/apis/api-endpoints
 - aid: uspto-gov:assignment-search-api
   name: USPTO Patent Assignment Search API
-  description: The USPTO Patent Assignment Search API retrieves patent assignment information including ownership
-    transfers, recorded assignments, and assignment history for individual patents and patent portfolios.
+  description: The USPTO Patent Assignment Search API retrieves patent assignment information including
+    ownership transfers, recorded assignments, and assignment history for individual patents and patent
+    portfolios.
   tags:
   - Assignments
   - Government
@@ -958,5 +959,8 @@ common:
 - type: Documentation
   url: https://developer.uspto.gov/
 created: '2026-05-25'
-modified: '2026-05-25'
+modified: '2026-09-15'
 specificationVersion: '0.23'
+description: The United States Patent and Trademark Office publishes open data APIs for patents and trademarks,
+  covering applications, assignments, citations, appeals and PTAB decisions, trademark status and document
+  retrieval (TSDR), and bulk datasets.
