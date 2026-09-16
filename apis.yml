@@ -745,9 +745,9 @@ apis:
     url: https://patentsview.org/apis/api-endpoints
 - aid: uspto-gov:assignment-search-api
   name: USPTO Patent Assignment Search API
-  description: The USPTO Patent Assignment Search API retrieves patent assignment information including
-    ownership transfers, recorded assignments, and assignment history for individual patents and patent
-    portfolios.
+  description: >-
+    The USPTO Patent Assignment Search API retrieves patent assignment information including ownership
+    transfers, recorded assignments, and assignment history for individual patents and patent portfolios.
   tags:
   - Assignments
   - Government
@@ -757,102 +757,6 @@ apis:
   properties:
   - type: Documentation
     url: https://developer.uspto.gov/api-catalog
-- aid: uspto-gov:uspto-assignments-api
-  name: USPTO Assignments API
-  description: Patent assignment records
-  humanURL: https://developer.uspto.gov/
-  baseURL: https://data.uspto.gov/api/v1
-  tags:
-  - Assignments
-  properties:
-  - type: OpenAPI
-    url: openapi/uspto-assignments-api-openapi.yml
-  - type: Documentation
-    url: https://developer.uspto.gov/
-  - type: Reference
-    url: https://developer.uspto.gov/api-catalog
-  - type: JSONSchema
-    url: json-schema/uspto-patent-schema.json
-  - type: Documentation
-    url: https://data.uspto.gov/ptab
-  - type: Documentation
-    url: https://developer.uspto.gov/swagger/tsdr-api-v1
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
-- aid: uspto-gov:uspto-patents-api
-  name: USPTO Patents API
-  description: Patent search and retrieval
-  humanURL: https://developer.uspto.gov/
-  baseURL: https://data.uspto.gov/api/v1
-  tags:
-  - Patents
-  properties:
-  - type: OpenAPI
-    url: openapi/uspto-patents-api-openapi.yml
-  - type: Documentation
-    url: https://developer.uspto.gov/
-  - type: Reference
-    url: https://developer.uspto.gov/api-catalog
-  - type: JSONSchema
-    url: json-schema/uspto-patent-schema.json
-  - type: Documentation
-    url: https://data.uspto.gov/ptab
-  - type: Documentation
-    url: https://developer.uspto.gov/swagger/tsdr-api-v1
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
-- aid: uspto-gov:uspto-ptab-api
-  name: USPTO PTAB API
-  description: Patent Trial and Appeal Board proceedings
-  humanURL: https://developer.uspto.gov/
-  baseURL: https://data.uspto.gov/api/v1
-  tags:
-  - PTAB
-  properties:
-  - type: OpenAPI
-    url: openapi/uspto-ptab-api-openapi.yml
-  - type: Documentation
-    url: https://developer.uspto.gov/
-  - type: Reference
-    url: https://developer.uspto.gov/api-catalog
-  - type: JSONSchema
-    url: json-schema/uspto-patent-schema.json
-  - type: Documentation
-    url: https://data.uspto.gov/ptab
-  - type: Documentation
-    url: https://developer.uspto.gov/swagger/tsdr-api-v1
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
-- aid: uspto-gov:uspto-trademarks-api
-  name: USPTO Trademarks API
-  description: Trademark status and documents
-  humanURL: https://developer.uspto.gov/
-  baseURL: https://data.uspto.gov/api/v1
-  tags:
-  - Trademarks
-  properties:
-  - type: OpenAPI
-    url: openapi/uspto-trademarks-api-openapi.yml
-  - type: Documentation
-    url: https://developer.uspto.gov/
-  - type: Reference
-    url: https://developer.uspto.gov/api-catalog
-  - type: JSONSchema
-    url: json-schema/uspto-patent-schema.json
-  - type: Documentation
-    url: https://data.uspto.gov/ptab
-  - type: Documentation
-    url: https://developer.uspto.gov/swagger/tsdr-api-v1
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/oa_actions.json
-  - type: Documentation
-    url: https://developer.uspto.gov/ds-api-docs/index.html?url=https%3A//developer.uspto.gov/ds-api/swagger/docs/enriched_cited_reference_metadata.json/V3
 name: USPTO
 tags:
 - Patents
