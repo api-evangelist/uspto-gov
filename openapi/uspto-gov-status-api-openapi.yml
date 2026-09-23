@@ -10,9 +10,7 @@ info:
 
     ST.96 XML, and JSON. Document and image bundles are delivered as PDFs and ZIPs.
 
-    Rate limits: 60 requests/min/key for status; 4 requests/min/key for PDF/ZIP downloads.
-
-    '
+    Rate limits: 60 requests/min/key for status; 4 requests/min/key for PDF/ZIP downloads.'
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov

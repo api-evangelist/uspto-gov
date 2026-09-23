@@ -45,7 +45,8 @@
     "uspto-patentsview-openapi.yml: declared missing tag: Patentsview",
     "uspto-ptab-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "uspto-tsdr-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "tag 'Documents' spans 3 source specs (uspto-patent-file-wrapper-openapi.yml, uspto-ptab-openapi.yml, uspto-tsdr-openapi.yml): per-path servers applied"
+    "tag 'Documents' spans 3 source specs (uspto-patent-file-wrapper-openapi.yml, uspto-ptab-openapi.yml, uspto-tsdr-openapi.yml): per-path servers applied",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "uspto-gov-appeals-api-openapi.yml: previously refined output, superseded by openapi/_original/",

@@ -8,9 +8,7 @@ info:
 
     information extraction and entity resolution to normalize patent and non-patent literature
 
-    citations against the application reference list.
-
-    '
+    citations against the application reference list.'
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov
@@ -83,6 +81,15 @@ paths:
                 $ref: '#/components/schemas/OfficeActionText'
 components:
   schemas:
+    OfficeActionTextSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfficeActionText'
     OfficeActionText:
       type: object
       properties:
@@ -110,15 +117,6 @@ components:
                 type: array
                 items:
                   type: string
-    OfficeActionTextSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfficeActionText'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

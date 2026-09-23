@@ -8,9 +8,7 @@ info:
 
     documents (office actions, responses, claims, drawings), continuity, foreign priority,
 
-    attorney/agent info, and patent term adjustments. Requires an ODP API key.
-
-    '
+    attorney/agent info, and patent term adjustments. Requires an ODP API key.'
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov
@@ -99,19 +97,6 @@ paths:
                 $ref: '#/components/schemas/PatentApplicationSearchResponse'
 components:
   schemas:
-    PatentApplicationSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        offset:
-          type: integer
-        limit:
-          type: integer
-        patentBag:
-          type: array
-          items:
-            $ref: '#/components/schemas/PatentApplication'
     PatentSearchRequest:
       type: object
       properties:
@@ -196,6 +181,19 @@ components:
           type: array
           items:
             type: object
+    PatentApplicationSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+        patentBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/PatentApplication'
   responses:
     RateLimited:
       description: Rate limit exceeded.

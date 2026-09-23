@@ -8,9 +8,7 @@ info:
 
     documents (office actions, responses, claims, drawings), continuity, foreign priority,
 
-    attorney/agent info, and patent term adjustments. Requires an ODP API key.
-
-    '
+    attorney/agent info, and patent term adjustments. Requires an ODP API key.'
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov
@@ -50,6 +48,21 @@ paths:
                   $ref: '#/components/schemas/Assignment'
 components:
   schemas:
+    Party:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nameLineOneText:
+          type: string
+        country:
+          type: string
+        cityName:
+          type: string
+        geographicRegionName:
+          type: string
     Assignment:
       type: object
       properties:
@@ -73,21 +86,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Party'
-    Party:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        nameLineOneText:
-          type: string
-        country:
-          type: string
-        cityName:
-          type: string
-        geographicRegionName:
-          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

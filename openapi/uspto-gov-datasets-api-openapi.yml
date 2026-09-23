@@ -8,9 +8,7 @@ info:
 
     weekly archives) as Entire Datasets (10-year increments) or Delta Datasets (daily increments)
 
-    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.
-
-    '
+    in XML/JSON. Does not support general filter/limit/offset/order_by database queries.'
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov
@@ -127,6 +125,15 @@ paths:
       - Datasets
 components:
   schemas:
+    BulkProductSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        bulkDataProductBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkProduct'
     BulkProduct:
       type: object
       properties:
@@ -163,15 +170,6 @@ components:
               fileDownloadURI:
                 type: string
                 format: uri
-    BulkProductSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        bulkDataProductBag:
-          type: array
-          items:
-            $ref: '#/components/schemas/BulkProduct'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

@@ -8,9 +8,7 @@ info:
 
     migrated to the USPTO Open Data Portal (data.uspto.gov) on March 20, 2026. Clients should
 
-    use an ODP API key going forward.
-
-    '
+    use an ODP API key going forward.'
   contact:
     name: USPTO API Help
     email: APIhelp@uspto.gov

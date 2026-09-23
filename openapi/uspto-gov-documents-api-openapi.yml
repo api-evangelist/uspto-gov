@@ -314,6 +314,15 @@ components:
               downloadUrl:
                 type: string
                 format: uri
+    DocumentSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Document_2'
     Document_2:
       type: object
       properties:
@@ -335,15 +344,6 @@ components:
         downloadUrl:
           type: string
           format: uri
-    DocumentSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Document_2'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
