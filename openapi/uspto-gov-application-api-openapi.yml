@@ -161,6 +161,9 @@ paths:
               schema:
                 type: object
 components:
+  responses:
+    NotFound:
+      description: Resource not found.
   schemas:
     Party:
       type: object
@@ -230,9 +233,6 @@ components:
           type: array
           items:
             type: object
-  responses:
-    NotFound:
-      description: Resource not found.
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

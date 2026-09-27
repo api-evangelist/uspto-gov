@@ -48,21 +48,6 @@ paths:
                   $ref: '#/components/schemas/Assignment'
 components:
   schemas:
-    Party:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        nameLineOneText:
-          type: string
-        country:
-          type: string
-        cityName:
-          type: string
-        geographicRegionName:
-          type: string
     Assignment:
       type: object
       properties:
@@ -86,6 +71,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Party'
+    Party:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        nameLineOneText:
+          type: string
+        country:
+          type: string
+        cityName:
+          type: string
+        geographicRegionName:
+          type: string
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
