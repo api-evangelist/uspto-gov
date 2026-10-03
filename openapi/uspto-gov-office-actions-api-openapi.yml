@@ -81,6 +81,15 @@ paths:
                 $ref: '#/components/schemas/OfficeActionText'
 components:
   schemas:
+    OfficeActionTextSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/OfficeActionText'
     OfficeActionText:
       type: object
       properties:
@@ -108,15 +117,6 @@ components:
                 type: array
                 items:
                   type: string
-    OfficeActionTextSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/OfficeActionText'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
