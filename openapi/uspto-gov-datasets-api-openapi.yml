@@ -125,6 +125,15 @@ paths:
       - Datasets
 components:
   schemas:
+    BulkProductSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        bulkDataProductBag:
+          type: array
+          items:
+            $ref: '#/components/schemas/BulkProduct'
     BulkProduct:
       type: object
       properties:
@@ -161,15 +170,6 @@ components:
               fileDownloadURI:
                 type: string
                 format: uri
-    BulkProductSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        bulkDataProductBag:
-          type: array
-          items:
-            $ref: '#/components/schemas/BulkProduct'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

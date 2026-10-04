@@ -81,15 +81,6 @@ paths:
                 $ref: '#/components/schemas/Decision'
 components:
   schemas:
-    DecisionSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Decision'
     Decision:
       type: object
       properties:
@@ -108,6 +99,15 @@ components:
           type: string
         documentIdentifier:
           type: string
+    DecisionSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Decision'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey

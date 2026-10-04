@@ -96,6 +96,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PatentApplicationSearchResponse'
 components:
+  responses:
+    RateLimited:
+      description: Rate limit exceeded.
+    Unauthorized:
+      description: Missing or invalid API key.
   schemas:
     Party:
       type: object
@@ -125,6 +130,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/PatentApplication'
+    PatentSearchRequest:
+      type: object
+      properties:
+        q:
+          type: string
+        filters:
+          type: object
+          additionalProperties: true
+        sort:
+          type: array
+          items:
+            type: string
+        offset:
+          type: integer
+        limit:
+          type: integer
     PatentApplication:
       type: object
       properties:
@@ -178,27 +199,6 @@ components:
           type: array
           items:
             type: object
-    PatentSearchRequest:
-      type: object
-      properties:
-        q:
-          type: string
-        filters:
-          type: object
-          additionalProperties: true
-        sort:
-          type: array
-          items:
-            type: string
-        offset:
-          type: integer
-        limit:
-          type: integer
-  responses:
-    RateLimited:
-      description: Rate limit exceeded.
-    Unauthorized:
-      description: Missing or invalid API key.
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
