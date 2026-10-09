@@ -1,23 +1,25 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/uspto-bulk-data-openapi.yml, openapi/uspto-office-actions-openapi.yml, openapi/uspto-patent-file-wrapper-openapi.yml,
-  openapi/uspto-patentsview-openapi.yml, openapi/uspto-ptab-openapi.yml, openapi/uspto-tsdr-openapi.yml
+source: openapi/uspto-gov-appeals-api-openapi.yml, openapi/uspto-gov-application-api-openapi.yml,
+  openapi/uspto-gov-assignments-api-openapi.yml, openapi/uspto-gov-citations-api-openapi.yml,
+  openapi/uspto-gov-datasets-api-openapi.yml, openapi/uspto-gov-decisions-api-openapi.yml, openapi/uspto-gov-documents-api-openapi.yml,
+  openapi/uspto-gov-enriched-citations-api-openapi.yml, openapi/uspto-gov-office-actions-api-openapi.yml,
+  openapi/uspto-gov-patentsview-api-openapi.yml, openapi/uspto-gov-proceedings-api-openapi.yml,
+  openapi/uspto-gov-rejections-api-openapi.yml, openapi/uspto-gov-search-api-openapi.yml, openapi/uspto-gov-status-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 48
   by_action_class:
-    connected: 47
-    acting: 1
+    connected: 48
   by_consequence:
-    read: 47
-    write: 1
+    read: 48
   human_in_the_loop_required: 0
 operations:
-- path: /api/v1/datasets/products/search
+- path: /api/v1/ptab/appeals/search
   method: get
-  operationId: searchBulkProducts
+  operationId: searchPtabAppeals
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -25,9 +27,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/datasets/products/{productIdentifier}
+- path: /api/v1/ptab/interferences/search
   method: get
-  operationId: getBulkProduct
+  operationId: searchPtabInterferences
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -35,122 +37,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/datasets/products/{productIdentifier}/files/{fileName}
-  method: get
-  operationId: downloadBulkProductFile
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/text/search
-  method: get
-  operationId: searchOfficeActionText
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/text/{officeActionIdentifier}
-  method: get
-  operationId: getOfficeActionText
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/citations/search
-  method: get
-  operationId: searchOfficeActionCitations
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/citations/fields
-  method: get
-  operationId: getOfficeActionCitationFields
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/rejections/search
-  method: get
-  operationId: searchOfficeActionRejections
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/rejections/fields
-  method: get
-  operationId: getOfficeActionRejectionFields
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/enriched-citations/search
-  method: get
-  operationId: searchEnrichedCitations
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/oa/enriched-citations/fields
-  method: get
-  operationId: getEnrichedCitationFields
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/patent/applications/search
-  method: get
-  operationId: searchPatentApplications
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/patent/applications/search
-  method: post
-  operationId: searchPatentApplicationsPost
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /api/v1/patent/applications/{applicationNumberText}
   method: get
   operationId: getPatentApplication
@@ -174,16 +60,6 @@ operations:
 - path: /api/v1/patent/applications/{applicationNumberText}/adjustment
   method: get
   operationId: getPatentTermAdjustment
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/patent/applications/{applicationNumberText}/assignment
-  method: get
-  operationId: getPatentAssignments
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -231,6 +107,86 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /api/v1/patent/applications/{applicationNumberText}/assignment
+  method: get
+  operationId: getPatentAssignments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/oa/citations/search
+  method: get
+  operationId: searchOfficeActionCitations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/oa/citations/fields
+  method: get
+  operationId: getOfficeActionCitationFields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/datasets/products/search
+  method: get
+  operationId: searchBulkProducts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/datasets/products/{productIdentifier}
+  method: get
+  operationId: getBulkProduct
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/datasets/products/{productIdentifier}/files/{fileName}
+  method: get
+  operationId: downloadBulkProductFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/ptab/decisions/search
+  method: get
+  operationId: searchPtabDecisions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/ptab/decisions/{decisionIdentifier}
+  method: get
+  operationId: getPtabDecision
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/v1/patent/applications/{applicationNumberText}/documents
   method: get
   operationId: listApplicationDocuments
@@ -244,6 +200,116 @@ operations:
 - path: /api/v1/download/applications/{applicationNumberText}/{documentId}.pdf
   method: get
   operationId: downloadApplicationDocumentPdf
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/ptab/documents/search
+  method: get
+  operationId: searchPtabDocuments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/ptab/documents/{documentIdentifier}
+  method: get
+  operationId: getPtabDocument
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/ptab/documents/{documentIdentifier}/download
+  method: get
+  operationId: downloadPtabDocument
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ts/cd/casedocs/bundle.pdf
+  method: get
+  operationId: getCaseDocumentsPdfBundle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ts/cd/casedocs/bundle.zip
+  method: get
+  operationId: getCaseDocumentsZipBundle
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ts/cd/casedocs/{sn}/{documentIdentifier}.pdf
+  method: get
+  operationId: getCaseDocumentPdf
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ts/cd/rgbimg/sn{serialNumber}/{imageType}.jpg
+  method: get
+  operationId: getMarkImage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/oa/enriched-citations/search
+  method: get
+  operationId: searchEnrichedCitations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/oa/enriched-citations/fields
+  method: get
+  operationId: getEnrichedCitationFields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/oa/text/search
+  method: get
+  operationId: searchOfficeActionText
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/v1/oa/text/{officeActionIdentifier}
+  method: get
+  operationId: getOfficeActionText
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -321,9 +387,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/ptab/decisions/search
+- path: /api/v1/oa/rejections/search
   method: get
-  operationId: searchPtabDecisions
+  operationId: searchOfficeActionRejections
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -331,9 +397,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/ptab/decisions/{decisionIdentifier}
+- path: /api/v1/oa/rejections/fields
   method: get
-  operationId: getPtabDecision
+  operationId: getOfficeActionRejectionFields
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -341,9 +407,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/ptab/documents/search
+- path: /api/v1/patent/applications/search
   method: get
-  operationId: searchPtabDocuments
+  operationId: searchPatentApplications
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -351,39 +417,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/v1/ptab/documents/{documentIdentifier}
-  method: get
-  operationId: getPtabDocument
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/ptab/documents/{documentIdentifier}/download
-  method: get
-  operationId: downloadPtabDocument
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/ptab/appeals/search
-  method: get
-  operationId: searchPtabAppeals
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/v1/ptab/interferences/search
-  method: get
-  operationId: searchPtabInterferences
+- path: /api/v1/patent/applications/search
+  method: post
+  operationId: searchPatentApplicationsPost
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -454,46 +490,6 @@ operations:
 - path: /ts/cd/casestatus/sn{serialNumber}/info.st96.xml
   method: get
   operationId: getCaseStatusBySerialNumberSt96
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /ts/cd/casedocs/bundle.pdf
-  method: get
-  operationId: getCaseDocumentsPdfBundle
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /ts/cd/casedocs/bundle.zip
-  method: get
-  operationId: getCaseDocumentsZipBundle
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /ts/cd/casedocs/{sn}/{documentIdentifier}.pdf
-  method: get
-  operationId: getCaseDocumentPdf
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /ts/cd/rgbimg/sn{serialNumber}/{imageType}.jpg
-  method: get
-  operationId: getMarkImage
   x-agentic-access:
     action-class: connected
     consequence: read
