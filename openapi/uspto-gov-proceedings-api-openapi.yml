@@ -91,6 +91,15 @@ paths:
                 $ref: '#/components/schemas/Proceeding'
 components:
   schemas:
+    ProceedingSearchResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Proceeding'
     Proceeding:
       type: object
       properties:
@@ -119,15 +128,6 @@ components:
         decisionDate:
           type: string
           format: date
-    ProceedingSearchResponse:
-      type: object
-      properties:
-        count:
-          type: integer
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Proceeding'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
