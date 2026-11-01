@@ -1,4 +1,4 @@
-# USPTO (uspto-gov)
+# USPTO
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,198 +64,162 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/uspto-gov/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/uspto-gov/refs/heads/main/apis.yml)
+The United States Patent and Trademark Office publishes open data APIs for patents and trademarks, covering applications, assignments, citations, appeals and PTAB decisions, trademark status and document retrieval (TSDR), and bulk datasets.
 
-## Scope
+**Areas:** Patents · Trademarks · Intellectual Property · Government · Federal · Open Data · PTAB · TSDR
 
-- **Access:** 3rd-Party
+## USPTO on APIs.io
 
-## Tags
+Everything profiled for USPTO is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/uspto-gov/](https://apis.io/providers/uspto-gov/)** — or go straight to one of the APIs or properties below.
 
-- Patents
-- Trademarks
-- Intellectual Property
-- Government
-- Federal
-- Open Data
-- PTAB
-- TSDR
+### APIs (15)
 
-## Timestamps
+- [USPTO Appeals API](https://apis.io/apis/uspto-gov/uspto-gov-appeals-api/) — PTAB appeal and interference decisions
+- [USPTO Application API](https://apis.io/apis/uspto-gov/uspto-gov-application-api/) — Retrieve patent application data
+- [USPTO Assignments API](https://apis.io/apis/uspto-gov/uspto-gov-assignments-api/) — Retrieve assignment records
+- [USPTO Citations API](https://apis.io/apis/uspto-gov/uspto-gov-citations-api/) — The Citations API from USPTO — 2 operation(s) for citations.
+- [USPTO Datasets API](https://apis.io/apis/uspto-gov/uspto-gov-datasets-api/) — The Datasets API from USPTO — 3 operation(s) for datasets.
+- [USPTO Decisions API](https://apis.io/apis/uspto-gov/uspto-gov-decisions-api/) — PTAB decisions
+- [USPTO Documents API](https://apis.io/apis/uspto-gov/uspto-gov-documents-api/) — Retrieve patent application documents
+- [USPTO Enriched Citations API](https://apis.io/apis/uspto-gov/uspto-gov-enriched-citations-api/) — The Enriched Citations API from USPTO — 2 operation(s) for enriched citations.
+- [USPTO Office Actions API](https://apis.io/apis/uspto-gov/uspto-gov-office-actions-api/) — The Office Actions API from USPTO — 2 operation(s) for office actions.
+- [USPTO Patentsview API](https://apis.io/apis/uspto-gov/uspto-gov-patentsview-api/) — The Patentsview API from USPTO — 5 operation(s) for patentsview.
+- [USPTO Proceedings API](https://apis.io/apis/uspto-gov/uspto-gov-proceedings-api/) — PTAB trial proceedings
+- [USPTO Rejections API](https://apis.io/apis/uspto-gov/uspto-gov-rejections-api/) — The Rejections API from USPTO — 2 operation(s) for rejections.
+- [USPTO Search API](https://apis.io/apis/uspto-gov/uspto-gov-search-api/) — Search patent applications
+- [USPTO Status API](https://apis.io/apis/uspto-gov/uspto-gov-status-api/) — Trademark case status
+- [USPTO Patent Assignment Search API](https://apis.io/apis/uspto-gov/assignment-search-api/) — The USPTO Patent Assignment Search API retrieves patent assignment information including ownership transfers, recorded assignments, and assignment history…
 
-- **Created:** 2026-05-25
-- **Modified:** 2026-05-25
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### USPTO Patent File Wrapper API
+#### Agentic access (1)
 
-Core USPTO Open Data Portal (ODP) API for searching and retrieving U.S. patent application file wrappers — bibliographic data, assignment history, prosecution documents (office actions, responses, claims, drawings), continuity, foreign priority, attorney/agent info, and patent term adjustments. Replaces the legacy Patent Examination Data System (PEDS) and Patent Application Information Retrieval (PAIR). Requires an ODP API key. Data covers all publicly available U.S. patent applications from Patent Center.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://data.uspto.gov/apis/patent-file-wrapper/search](https://data.uspto.gov/apis/patent-file-wrapper/search)
+- [Uspto Gov Agentic Access](https://apis.io/agentic-access/uspto-gov/uspto-gov-agentic-access/)
 
-#### Tags
+#### JSON Schema (2)
 
-- Patents
-- File Wrapper
-- Government
-- Intellectual Property
-- Open Data
+The data models the API reads and writes.
 
-#### Properties
+- [USPTO Patent Application](https://apis.io/schemas/uspto-gov/uspto-patent-application/)
+- [USPTO Trademark Case](https://apis.io/schemas/uspto-gov/uspto-trademark-case/)
 
-- [Documentation](https://data.uspto.gov/apis/patent-file-wrapper/search)
-- [Documentation](https://data.uspto.gov/apis/patent-file-wrapper/application-data)
-- [Documentation](https://data.uspto.gov/apis/patent-file-wrapper/documents)
-- [Documentation](https://data.uspto.gov/apis/patent-file-wrapper/assignments)
-- [OpenAPI](openapi/uspto-patent-file-wrapper-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/uspto-patent-file-wrapper.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/uspto-patent-file-wrapper.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/uspto-patent-application-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/uspto-gov-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+#### JSON-LD (1)
 
-### USPTO Patent Trial and Appeal Board (PTAB) API
+Linked-data contexts for the provider's vocabulary.
 
-Patent Trial and Appeal Board (PTAB) API v3 hosted on the Open Data Portal. 19 endpoints covering trial proceedings (IPR, PGR, CBM, derivation), trial decisions (institution, final written, terminations), trial documents (petitions, patent owner responses, expert declarations), and trial appeal/interference decisions. Coverage from 1997 to present; full PTAB Trial decisions and party briefing since September 2012. The legacy Developer Hub PTAB API was fully retired on January 6, 2026.
+- [Uspto Gov Context](https://apis.io/jsonld/uspto-gov/uspto-gov-context/)
 
-- **Human URL:** [https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp](https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp)
+#### Vocabulary (1)
 
-#### Tags
+The provider's domain terms, defined.
 
-- PTAB
-- Patents
-- Trials
-- Decisions
-- Government
-- Intellectual Property
-- Open Data
+- [USPTO Vocabulary](https://apis.io/vocabularies/uspto-gov/uspto-gov-vocabulary/)
 
-#### Properties
+#### Collections (20)
 
-- [Documentation](https://developer.uspto.gov/api-catalog/ptab-api-v3-data-odp)
-- [Documentation](https://data.uspto.gov/apis/ptab-trials/search-documents)
-- [Documentation](https://data.uspto.gov/apis/ptab-trials/search-decisions)
-- [OpenAPI](openapi/uspto-ptab-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/uspto-ptab.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/uspto-ptab.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Postman and Open Collection request collections.
 
-### USPTO Trademark Status and Document Retrieval (TSDR) API
+- [USPTO Bulk Data Storage System (BDSS) API](https://apis.io/collections/uspto-gov/open-uspto-bulk-data/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals API](https://apis.io/collections/uspto-gov/open-uspto-gov-appeals-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Application API](https://apis.io/collections/uspto-gov/open-uspto-gov-application-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Assignments API](https://apis.io/collections/uspto-gov/open-uspto-gov-assignments-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Citations API](https://apis.io/collections/uspto-gov/open-uspto-gov-citations-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Datasets API](https://apis.io/collections/uspto-gov/open-uspto-gov-datasets-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Decisions API](https://apis.io/collections/uspto-gov/open-uspto-gov-decisions-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Documents API](https://apis.io/collections/uspto-gov/open-uspto-gov-documents-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Enriched Citations API](https://apis.io/collections/uspto-gov/open-uspto-gov-enriched-citations-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Office Actions API](https://apis.io/collections/uspto-gov/open-uspto-gov-office-actions-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Patentsview API](https://apis.io/collections/uspto-gov/open-uspto-gov-patentsview-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Proceedings API](https://apis.io/collections/uspto-gov/open-uspto-gov-proceedings-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Rejections API](https://apis.io/collections/uspto-gov/open-uspto-gov-rejections-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Search API](https://apis.io/collections/uspto-gov/open-uspto-gov-search-api/)
+- [USPTO Bulk Data Storage System (BDSS) Appeals Status API](https://apis.io/collections/uspto-gov/open-uspto-gov-status-api/)
+- [USPTO Office Action APIs](https://apis.io/collections/uspto-gov/open-uspto-office-actions/)
+- [USPTO Patent File Wrapper API](https://apis.io/collections/uspto-gov/open-uspto-patent-file-wrapper/)
+- [USPTO PatentsView API](https://apis.io/collections/uspto-gov/open-uspto-patentsview/)
+- [USPTO Patent Trial and Appeal Board (PTAB) API](https://apis.io/collections/uspto-gov/open-uspto-ptab/)
+- [USPTO Trademark Status and Document Retrieval (TSDR) API](https://apis.io/collections/uspto-gov/open-uspto-tsdr/)
 
-Trademark Status & Document Retrieval (TSDR) Data API — 24 endpoints (hosted on a separate server with a separate API key from the rest of ODP) for retrieving trademark case status, documents, and images by serial number, registration number, reference number, or international registration number. Returns case metadata in XML, JSON, and ST.96 formats and lets clients pull full file wrapper PDFs and ZIP packages. Rate limited at 60 requests/min/key for status calls and 4 requests/min/key for PDF/ZIP downloads.
+#### Governance rules (1)
 
-- **Human URL:** [https://developer.uspto.gov/api-catalog/tsdr-data-api](https://developer.uspto.gov/api-catalog/tsdr-data-api)
+Spectral rulesets for the provider's contracts.
 
-#### Tags
+- [USPTO — jsonschema rules](https://apis.io/rules/uspto-gov/uspto-gov-jsonschema-spectral-rules/)
 
-- Trademarks
-- TSDR
-- Government
-- Intellectual Property
-- Document Retrieval
-- Open Data
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://developer.uspto.gov/api-catalog/tsdr-data-api)
-- [Documentation](https://developer.uspto.gov/swagger/tsdr-api-v1)
-- [Portal](https://tsdr.uspto.gov/)
-- [Documentation](https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf)
-- [OpenAPI](openapi/uspto-tsdr-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/uspto-tsdr.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/uspto-tsdr.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/uspto-trademark-case-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [Uspto Gov Authentication](https://apis.io/security/uspto-gov/uspto-gov-authentication/)
+- [Uspto Gov Domain Security](https://apis.io/security/uspto-gov/uspto-gov-domain-security/)
 
-### USPTO Office Action APIs
+#### Rate limits (1)
 
-Family of 8 endpoints covering structured Office Action data — Text Retrieval, Citations, Rejections, and Enriched Citations. The Enriched Citation API uses machine-learning information extraction and entity resolution to normalize patent and non-patent literature citations against the application reference list. Office Action Weekly Archives are surfaced as bulk product OACT via SearchBulkProducts/GetBulkProduct. All legacy Office Action and Enriched Citation APIs were migrated to ODP ahead of the May 29, 2026 Developer Hub decommission.
+Published request limits.
 
-- **Human URL:** [https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3](https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3)
+- [Uspto Gov Rate Limits](https://apis.io/rate-limits/uspto-gov/uspto-gov-rate-limits/)
 
-#### Tags
+## Where to find this API
 
-- Patents
-- Office Actions
-- Citations
-- Rejections
-- Government
-- Intellectual Property
-- Machine Learning
-- Open Data
-
-#### Properties
-
-- [Documentation](https://developer.uspto.gov/api-catalog/uspto-enriched-citation-api-v3)
-- [Documentation](https://developer.uspto.gov/api-catalog/uspto-office-action-citations-api)
-- [OpenAPI](openapi/uspto-office-actions-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/uspto-office-actions.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/uspto-office-actions.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### USPTO Bulk Data Storage System (BDSS) API
-
-ODP Bulk Data API exposing the Bulk Data Storage System (BDSS) — SearchBulkProducts and GetBulkProduct operations for downloading patent and trademark bulk datasets (bibliographic, assignment, classification, office action weekly archives, etc.) as Entire Datasets (10-year increments) or Delta Datasets (daily increments) in XML/JSON. Methods support product lookup but do not allow general filter/limit/offset/order-by database queries.
-
-- **Human URL:** [https://data.uspto.gov/apis/bulk-data/search](https://data.uspto.gov/apis/bulk-data/search)
-
-#### Tags
-
-- Bulk Data
-- Patents
-- Trademarks
-- Datasets
-- Government
-- Open Data
-
-#### Properties
-
-- [Documentation](https://data.uspto.gov/apis/bulk-data/search)
-- [Documentation](https://data.uspto.gov/apis/bulk-data/product)
-- [Documentation](https://data.uspto.gov/patent-file-wrapper/bulkdata/entire)
-- [Documentation](https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf)
-- [OpenAPI](openapi/uspto-bulk-data-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/uspto-bulk-data.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/uspto-bulk-data.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### USPTO PatentsView API
-
-USPTO research-oriented patent data API with inventor disambiguation, assignee, location, CPC/USPC classification, and citation endpoints. The database integrates the best available tools for inventor disambiguation and data quality control, supporting bibliometric and innovation research. PatentsView migrated into the USPTO Open Data Portal on March 20, 2026 — clients should obtain an ODP API key and use the ODP-hosted endpoints going forward.
-
-- **Human URL:** [https://developer.uspto.gov/api-catalog/patentsview](https://developer.uspto.gov/api-catalog/patentsview)
-
-#### Tags
-
-- Patents
-- Inventors
-- Research
-- Disambiguation
-- Government
-- Open Data
-
-#### Properties
-
-- [Documentation](https://developer.uspto.gov/api-catalog/patentsview)
-- [Documentation](https://patentsview.org/apis/api-endpoints)
-- [OpenAPI](openapi/uspto-patentsview-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/uspto-patentsview.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/uspto-patentsview.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.uspto.gov/)
-- [Portal](https://data.uspto.gov/)
 - [Documentation](https://developer.uspto.gov/api-catalog)
-- [Documentation](https://data.uspto.gov/apis/getting-started)
-- [Documentation](https://data.uspto.gov/apis/transition-guide)
-- [Documentation](https://data.uspto.gov/documents/documents/BDSS-to-ODP-API-Mapping.pdf)
-- [Documentation](https://www.uspto.gov/sites/default/files/documents/tm-enterprise-api-user-guide-v2.pdf)
-- [Authentication](https://data.uspto.gov/apis/getting-started)
-- [Rate Limits](https://developer.uspto.gov/files/tsdr-api-key-manager-user-guide)
-- [Support](mailto:APIhelp@uspto.gov)
-- [Support](mailto:contactUXD@uspto.gov)
-- [Git Hub](https://github.com/USPTO)
-- [Data Portal](https://catalog.data.gov/organization/uspto-gov)
-- [Bulk Data](https://data.uspto.gov/patent-file-wrapper/bulkdata/entire)
-- [Trademark](https://tsdr.uspto.gov/)
-- [Trademark](https://www.uspto.gov/trademarks/apply/check-status-view-documents/trademark-bulk-data)
-- [Patent](https://patentcenter.uspto.gov/)
-- [Vocabulary](vocabulary/uspto-gov-vocabulary.yml)
-- [Rate Limits](rate-limits/uspto-gov-rate-limits.yml)
+- [Blog](https://www.uspto.gov/rss.xml)
+
+## API Evangelist rating
+
+**Kin Score 30.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 57.7 |
+| Contract governance | 23.5 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 26.2 |
+| Access clarity | 0.0 |
+
+**Agent readiness 19.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/uspto-gov/](https://apis.io/providers/uspto-gov/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for USPTO: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/uspto-gov/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
